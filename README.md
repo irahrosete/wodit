@@ -1,3 +1,27 @@
-# WODit
+# <img src='./client/img/wodit-logo.jpg' alt='wodit logo' width='50' /> WODit
 
-https://wodit.netlify.app/
+url: https://wodit.netlify.app/<br>
+https://wodit-app.herokuapp.com/<br>
+Git Repo: https://github.com/irahrosete/wodit
+
+## About
+
+## Features
+
+## Target Audience
+
+## User Stories
+
+## Sitemap
+
+## Tech Stack
+
+### Dependencies
+
+## Wireframes
+
+## Testing
+
+## Deployment
+
+## Local Setup
