@@ -1,7 +1,7 @@
 # <img src='./client/img/wodit-logo.jpg' alt='wodit logo' width='50' /> WODit
 
 url: https://wodit.netlify.app/<br>
-https://wodit-app.herokuapp.com/<br>
+api: https://wodit-app.herokuapp.com/<br>
 Git Repo: https://github.com/irahrosete/wodit
 
 ## About
