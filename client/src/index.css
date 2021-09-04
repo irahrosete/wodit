@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu {
+  @apply uppercase font-body py-2 pr-8 tracking-widest text-right;
+}
+
+.btndate {
+  @apply pt-1 pb-2 px-3 border rounded font-body tracking-widest;
+}

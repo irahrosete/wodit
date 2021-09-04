@@ -1,19 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Menu = ({ isOpen }) => {
   return (
     <div>
-      {isOpen ? (
-        <div className='bg-wodBlack bg-opacity-90 pb-2'>
-          <p className='uppercase font-body text-wodWhite py-2 pr-8 tracking-wide ml-4 text-right'>
-            Log in
-          </p>
-          <p className='uppercase font-body text-wodYellow py-2 pr-8 tracking-widest ml-4 text-right'>
-            Sign up
-          </p>
+      {isOpen && (
+        <div className='bg-wodBlack bg-opacity-80 pb-2'>
+          <Link to='/login'>
+            <p className='menu text-wodWhite'>Log in</p>
+          </Link>
+          <Link to='/signup'>
+            <p className='menu text-wodYellow'>Sign up</p>
+          </Link>
         </div>
-      ) : (
-        <p></p>
       )}
     </div>
   )
