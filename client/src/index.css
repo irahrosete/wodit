@@ -11,3 +11,10 @@
 .btndate {
   @apply pt-1 pb-2 px-3 border-wodGray bg-wodGray rounded font-body tracking-widest;
 }
+
+.box {
+  @apply border border-wodDarkGray bg-wodGray;
+  width: 350px;
+  height: 350px;
+  margin: auto;
+}

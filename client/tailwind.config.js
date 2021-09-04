@@ -6,6 +6,7 @@ module.exports = {
       wodBlack: '#323232',
       wodWhite: '#ffffff',
       wodGray: '#f6f6f6',
+      wodDarkGray: '#d6d6d6',
       wodYellow: '#fff8b6',
     },
     extend: {
