@@ -1,4 +1,4 @@
-# <img src='./client/img/wodit-logo.jpg' alt='wodit logo' width='50' /> WODit
+# <img src='./client/src/img/wodit-logo.jpg' alt='wodit logo' width='50' /> WODit
 
 url: https://wodit.netlify.app/<br>
 api: https://wodit-app.herokuapp.com/<br>
