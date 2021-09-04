@@ -5,7 +5,7 @@ const Menu = ({ isOpen }) => {
   return (
     <div>
       {isOpen && (
-        <div className='bg-wodBlack bg-opacity-80 pb-2'>
+        <div className='bg-wodBlack bg-opacity-80 py-2'>
           <Link to='/login'>
             <p className='menu text-wodWhite'>Log in</p>
           </Link>

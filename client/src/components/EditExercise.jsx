@@ -1,6 +1,6 @@
-import React, { useState, forwardRef } from 'react'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import React, { useState } from 'react'
+
+import DatePick from './DatePick'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
@@ -10,37 +10,11 @@ const EditExercise = () => {
     date: new Date(),
   })
 
-  const [date, setDate] = useState(new Date())
-  const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-    <div className='flex justify-center'>
-      <button
-        className='btndate example-custom-input'
-        onClick={onClick}
-        ref={ref}
-      >
-        {value}
-      </button>
-    </div>
-  ))
-
-  const handleDateChange = (date) => {
-    setDate(date)
-    setExercise({ ...exercise, date })
-  }
-
   return (
     <>
-      <div className='flex justify-center m-6'>
-        <DatePicker
-          className='rounded'
-          selected={date}
-          onChange={handleDateChange}
-          customInput={<ExampleCustomInput />}
-          dateFormat='dd/MM/yyyy'
-        />
-      </div>
+      <DatePick exercise={exercise} setExercise={setExercise} />
       <div className='flex justify-center'>
-        <p>PUSH UPS</p>
+        <h3 className='font-body tracking-wider text-2xl'>PUSH UPS</h3>
       </div>
     </>
   )

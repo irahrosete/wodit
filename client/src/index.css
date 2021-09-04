@@ -9,5 +9,5 @@
 }
 
 .btndate {
-  @apply pt-1 pb-2 px-3 border rounded font-body tracking-widest;
+  @apply pt-1 pb-2 px-3 border-wodGray bg-wodGray rounded font-body tracking-widest;
 }
