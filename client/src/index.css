@@ -9,12 +9,19 @@
 }
 
 .btndate {
-  @apply pt-1 pb-2 px-3 border-wodGray bg-wodGray rounded font-body tracking-widest;
+  @apply pt-1 pb-2 px-3 border-wodGray bg-wodGray rounded font-body tracking-widest shadow-md;
+}
+
+.btn {
+  @apply pt-1 pb-2 px-3 uppercase active:bg-wodDarkYellow bg-wodYellow rounded font-body tracking-widest shadow-md;
 }
 
 .box {
-  @apply border border-wodDarkGray bg-wodGray;
+  @apply border border-wodDarkGray bg-wodGray rounded mx-auto;
   width: 350px;
   height: 350px;
-  margin: auto;
+}
+
+.knob-box {
+  height: 55vh;
 }
