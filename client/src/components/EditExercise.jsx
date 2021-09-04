@@ -11,10 +11,13 @@ const EditExercise = () => {
     rep: 0,
     date: new Date(),
   })
-  const [value, setValue] = useState(0)
+
+  const [rep, setRep] = useState(0)
   const handleClick = () => {
-    console.log(value)
+    setExercise({ ...exercise, rep })
   }
+
+  console.log(exercise, rep)
 
   return (
     <>
@@ -30,12 +33,12 @@ const EditExercise = () => {
               min={0}
               max={50}
               step={1}
-              value={value}
+              value={rep}
               style={{ fontFamily: 'Antonio' }}
               theme={{
                 donutColor: '#323232',
               }}
-              onValueChange={setValue}
+              onValueChange={setRep}
               ariaLabelledBy={'my-label'}
             ></Donut>
           </div>
