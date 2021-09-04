@@ -6,6 +6,10 @@ import EditExercise from './components/EditExercise'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
 import Error from './pages/Error'
+import Wods from './components/Wods'
+import Exercises from './components/Exercises'
+import Girls from './pages/Girls'
+import SignOut from './pages/SignOut'
 
 const App = () => {
   return (
@@ -20,6 +24,18 @@ const App = () => {
         </Route>
         <Route path='/signup'>
           <SignUp />
+        </Route>
+        <Route path='/wods'>
+          <Wods />
+        </Route>
+        <Route path='/exer'>
+          <Exercises />
+        </Route>
+        <Route path='/girls'>
+          <Girls />
+        </Route>
+        <Route path='/signout'>
+          <SignOut />
         </Route>
         <Route path='*'>
           <Error />

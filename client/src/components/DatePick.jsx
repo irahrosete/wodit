@@ -22,9 +22,8 @@ const DatePick = ({ exercise, setExercise }) => {
   }
 
   return (
-    <div className='flex justify-around m-6'>
+    <div className='flex justify-center m-6'>
       <DatePicker
-        className='rounded'
         selected={date}
         onChange={handleDateChange}
         customInput={<ExampleCustomInput />}

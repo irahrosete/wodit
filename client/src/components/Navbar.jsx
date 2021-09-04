@@ -30,7 +30,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <Menu isOpen={isOpen} />
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   )
 }
