@@ -30,7 +30,7 @@ const EditExercise = () => {
     }, 0)
     setTimeout(() => {
       setAddAlert(false)
-    }, 5000)
+    }, 3000)
   }
 
   const handleRemove = () => {
@@ -41,7 +41,7 @@ const EditExercise = () => {
     }, 0)
     setTimeout(() => {
       setRemoveAlert(false)
-    }, 5000)
+    }, 3000)
   }
 
   return (
