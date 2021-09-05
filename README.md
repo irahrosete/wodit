@@ -20,7 +20,32 @@ Trello Board: https://trello.com/b/Tef96hTL/wodit
 
 ## Tech Stack
 
+- MongoDB
+- Express JS
+- React
+- Node JS
+
+### Tools
+
+- Yarn
+- NPM
+- Netlify
+- Heroku
+- Trello
+- Figma
+- Hero Icons
+
 ### Dependencies
+
+- Tailwind CSS
+- React Date Picker
+- React Dial Knob
+- React Router DOM
+- Axios
+- Nodemon
+- Mongoose
+- Dotenv
+- CORS
 
 ## Wireframes
 
