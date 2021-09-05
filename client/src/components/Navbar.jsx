@@ -13,11 +13,11 @@ const Navbar = () => {
 
   const menuRef = useRef(null)
 
+  // custtom hook to close dropdown menu
   const useOutsideClicker = (ref) => {
     useEffect(() => {
       const handleClickOutside = (event) => {
         if (ref.current && !ref.current.contains(event.target)) {
-          // alert('clicked outside!')
           setIsOpen(false)
         }
       }
