@@ -14,6 +14,10 @@ Git Repo: https://github.com/irahrosete/wodit
 
 ## Sitemap
 
+## Planning
+
+Trello Board: https://trello.com/b/Tef96hTL/wodit
+
 ## Tech Stack
 
 ### Dependencies

@@ -42,10 +42,17 @@ const EditExercise = () => {
               ariaLabelledBy={'my-label'}
             ></Donut>
           </div>
-          <div className='flex justify-center mt-5'>
-            <button className='btn' onClick={handleClick}>
-              add
-            </button>
+          <div className='flex justify-between'>
+            <div className='ml-5 mt-5 w-10'>
+              <button className='btn' onClick={handleClick}>
+                remove
+              </button>
+            </div>
+            <div className='mr-5 mt-5'>
+              <button className='btn' onClick={handleClick}>
+                add
+              </button>
+            </div>
           </div>
         </div>
       </div>

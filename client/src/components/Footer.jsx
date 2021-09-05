@@ -12,7 +12,7 @@ const Footer = () => {
         <Dumbbell width='60' />
       </Link>
       <Link to='/'>
-        <Add width='40' className='mt-2' />
+        <Add width='50' className='mt-1' />
       </Link>
       <Link to='/exer'>
         <Bar width='40' className='mt-2' />
