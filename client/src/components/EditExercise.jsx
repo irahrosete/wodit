@@ -3,6 +3,10 @@ import { Donut } from 'react-dial-knob'
 
 import DatePick from './DatePick'
 import Footer from './Footer'
+import Alert from './Alert'
+
+import thumbup from '../img/thumb-up.js'
+import thumbdown from '../img/thumb-down'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
@@ -13,14 +17,48 @@ const EditExercise = () => {
   })
 
   const [rep, setRep] = useState(0)
-  const handleClick = () => {
+  console.log(exercise, rep)
+
+  const [addAlert, setAddAlert] = useState(false)
+  const [removeAlert, setRemoveAlert] = useState(false)
+
+  const handleAdd = () => {
     setExercise({ ...exercise, rep })
+
+    setTimeout(() => {
+      setAddAlert(true)
+    }, 0)
+    setTimeout(() => {
+      setAddAlert(false)
+    }, 5000)
   }
 
-  console.log(exercise, rep)
+  const handleRemove = () => {
+    setExercise({ ...exercise, rep })
+
+    setTimeout(() => {
+      setRemoveAlert(true)
+    }, 0)
+    setTimeout(() => {
+      setRemoveAlert(false)
+    }, 5000)
+  }
 
   return (
     <>
+      {addAlert && (
+        <Alert
+          icon={thumbup}
+          message={`You've added ${rep} reps to your push ups!`}
+        />
+      )}
+      {removeAlert && (
+        <Alert
+          icon={thumbdown}
+          message={`You've removed ${rep} reps from your push ups!`}
+        />
+      )}
+
       <DatePick exercise={exercise} setExercise={setExercise} />
       <div className='flex justify-center'>
         <h3 className='font-body tracking-wider text-2xl mb-6'>PUSH UPS</h3>
@@ -44,12 +82,12 @@ const EditExercise = () => {
           </div>
           <div className='flex justify-between'>
             <div className='ml-5 mt-5 w-10'>
-              <button className='btn' onClick={handleClick}>
+              <button className='btn' onClick={handleRemove}>
                 remove
               </button>
             </div>
             <div className='mr-5 mt-5'>
-              <button className='btn' onClick={handleClick}>
+              <button className='btn' onClick={handleAdd}>
                 add
               </button>
             </div>
