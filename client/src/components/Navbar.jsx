@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import Menu from './Menu'
@@ -11,8 +11,27 @@ const Navbar = () => {
     setIsOpen(!isOpen)
   }
 
+  const menuRef = useRef(null)
+
+  const useOutsideClicker = (ref) => {
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          // alert('clicked outside!')
+          setIsOpen(false)
+        }
+      }
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }, [ref])
+  }
+
+  useOutsideClicker(menuRef)
+
   return (
-    <div>
+    <div ref={menuRef}>
       <nav className='bg-wodBlack py-3 flex justify-between'>
         <div className='flex ml-8'>
           <Link to='/'>

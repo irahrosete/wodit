@@ -7,6 +7,7 @@ const Menu = ({ isOpen, setIsOpen }) => {
   const handleClick = () => {
     setIsOpen(!isOpen)
   }
+
   return (
     <div>
       {isOpen && (
