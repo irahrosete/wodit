@@ -1,29 +1,33 @@
 import React, { useState } from 'react'
 import { Donut } from 'react-dial-knob'
+import axios from 'axios'
 
 import DatePick from './DatePick'
 import Footer from './Footer'
 import Alert from './Alert'
 
-import thumbup from '../img/thumb-up.js'
+import thumbup from '../img/thumb-up'
 import thumbdown from '../img/thumb-down'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    email: '',
-    activity: '',
+    firstName: 'irah',
+    activity: 'push ups',
     rep: 0,
     date: new Date(),
   })
 
   const [rep, setRep] = useState(0)
-  console.log(exercise, rep)
 
   const [addAlert, setAddAlert] = useState(false)
   const [removeAlert, setRemoveAlert] = useState(false)
 
-  const handleAdd = () => {
-    setExercise({ ...exercise, rep })
+  const handleAdd = (e) => {
+    e.preventDefault()
+    const newExercise = { ...exercise, rep }
+
+    // console.log(rep)
+    // console.log({ ...exercise, rep })
 
     setTimeout(() => {
       setAddAlert(true)
@@ -31,9 +35,15 @@ const EditExercise = () => {
     setTimeout(() => {
       setAddAlert(false)
     }, 3000)
+
+    axios
+      .post('http://localhost:5000/api/exercises/add', newExercise)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err))
   }
 
-  const handleRemove = () => {
+  const handleRemove = (e) => {
+    e.preventDefault()
     setExercise({ ...exercise, rep })
 
     setTimeout(() => {

@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import exercisesRouter from './routes/exercises.js'
 
 dotenv.config()
 
@@ -22,6 +23,8 @@ connection.once('open', () => {
 app.get('/', (req, res) => {
   res.status(200).send('Hello from WODit server')
 })
+
+app.use('/api/exercises', exercisesRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
