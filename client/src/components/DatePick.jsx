@@ -22,7 +22,7 @@ const DatePick = ({ exercise, setExercise }) => {
   }
 
   return (
-    <div className='flex justify-center m-6'>
+    <div className='flex justify-center m-6 relative z-10'>
       <DatePicker
         selected={date}
         onChange={handleDateChange}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Alert = ({ icon, message }) => {
   return (
-    <div className='flex p-1 my-3 mx-5 justify-center bg-wodGray border rounded border-wodDarkGray'>
+    <div className='flex p-1 my-3 mx-5 justify-center bg-wodGray border rounded border-wodDarkGray absolute inset-x-0 z-20'>
       {icon}
       <p className='font-body tracking-wider text-wodBlack text-sm flex items-center pl-2'>
         {message}

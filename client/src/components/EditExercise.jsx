@@ -10,7 +10,7 @@ import thumbdown from '../img/thumb-down'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    username: '',
+    email: '',
     activity: '',
     rep: 0,
     date: new Date(),
