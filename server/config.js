@@ -3,9 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const env = () => {
-  if (process.env.NODE_ENV === 'production') {
-    return `${process.env.ATLAS_URI}/wodit-prod?retryWrites=true&w=majority`
-  } else if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === 'development') {
     console.log('You are in the ' + process.env.NODE_ENV + ' environment.')
     return `${process.env.ATLAS_URI}/wodit-dev?retryWrites=true&w=majority`
   } else if (process.env.NODE_ENV === 'test') {

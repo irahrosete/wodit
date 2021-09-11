@@ -15,7 +15,11 @@ const EditExercise = () => {
     firstName: 'irah',
     activity: 'push ups',
     rep: 0,
-    date: new Date(),
+    date: new Date(
+      new Date().getFullYear(),
+      new Date().getMonth(),
+      new Date().getDate()
+    ),
   })
 
   const [rep, setRep] = useState(0)
@@ -26,9 +30,7 @@ const EditExercise = () => {
   const handleAdd = (e) => {
     e.preventDefault()
     const newExercise = { ...exercise, rep }
-
-    // console.log(rep)
-    // console.log({ ...exercise, rep })
+    console.log(newExercise)
 
     setTimeout(() => {
       setAddAlert(true)
