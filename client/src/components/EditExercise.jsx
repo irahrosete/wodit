@@ -8,6 +8,7 @@ import Alert from './Alert'
 
 import thumbup from '../img/thumb-up'
 import thumbdown from '../img/thumb-down'
+import ENV_URL from '../config'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
@@ -37,7 +38,7 @@ const EditExercise = () => {
     }, 3000)
 
     axios
-      .post('http://localhost:5000/api/exercises/add', newExercise)
+      .post(`${ENV_URL}/api/exercises/add`, newExercise)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err))
   }
@@ -92,12 +93,12 @@ const EditExercise = () => {
           </div>
           <div className='flex justify-between'>
             <div className='ml-5 mt-5 w-10'>
-              <button className='btn' onClick={handleRemove}>
+              <button className='btn bg-wodGray' onClick={handleRemove}>
                 remove
               </button>
             </div>
             <div className='mr-5 mt-5'>
-              <button className='btn' onClick={handleAdd}>
+              <button className='btn bg-wodYellow' onClick={handleAdd}>
                 add
               </button>
             </div>

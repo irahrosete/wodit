@@ -5,8 +5,8 @@
   "description": "WODit server",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=development nodemon server.js",
+    "test": "NODE_ENV=test"
   },
   "keywords": [],
   "author": "Irah Rosete",

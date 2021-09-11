@@ -9,11 +9,11 @@
 }
 
 .btndate {
-  @apply pt-1 pb-2 px-3 bg-wodYellow rounded font-body tracking-widest shadow-md;
+  @apply pt-1 pb-2 px-3 bg-wodYellow border border-wodDarkGray rounded font-body tracking-widest shadow-md;
 }
 
 .btn {
-  @apply pt-1 pb-2 px-3 uppercase bg-wodYellow active:bg-wodDarkYellow  rounded font-body tracking-widest shadow-md;
+  @apply pt-1 pb-2 px-3 uppercase border border-wodDarkGray rounded font-body tracking-widest shadow-md;
   width: 75px;
 }
 
