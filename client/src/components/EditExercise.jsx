@@ -22,6 +22,8 @@ const EditExercise = () => {
   })
 
   const [rep, setRep] = useState(0)
+  const [existingRep, setExistingRep] = useState(0)
+  const [removeRep, setRemoveRep] = useState(0)
 
   const [addAlert, setAddAlert] = useState(false)
   const [removeAlert, setRemoveAlert] = useState(false)
@@ -46,7 +48,7 @@ const EditExercise = () => {
         const existingExercise = res.data[0]
 
         if (existingExercise) {
-          const newRep = rep + res.data[0].rep
+          const newRep = rep + existingExercise.rep
           axios
             .post(`${ENV_URL}/api/exercises/update/${existingExercise._id}`, {
               ...existingExercise,
@@ -54,7 +56,7 @@ const EditExercise = () => {
             })
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
-          // console.log({ ...existingExercise, rep: newRep })
+          console.log({ ...existingExercise, rep: newRep })
         } else {
           // console.log('no exercise for this date')
           axios
@@ -67,16 +69,43 @@ const EditExercise = () => {
   }
 
   const handleRemove = (e) => {
-    e.preventDefault()
-    setExercise({ ...exercise, rep })
-
     setTimeout(() => {
       setRemoveAlert(true)
     }, 0)
     setTimeout(() => {
       setRemoveAlert(false)
     }, 3000)
+
+    console.log(exercise.date.toISOString().substring(0, 10))
+
+    axios
+      .get(
+        `${ENV_URL}/api/exercises/query?date=${exercise.date
+          .toISOString()
+          .substring(0, 10)}`
+      )
+      .then((res) => {
+        const existingExercise = res.data[0]
+
+        if (existingExercise.rep > rep) {
+          const newRep = existingExercise.rep - rep
+          axios
+            .post(`${ENV_URL}/api/exercises/update/${existingExercise._id}`, {
+              ...existingExercise,
+              rep: newRep,
+            })
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err))
+          console.log({ ...existingExercise, rep: newRep })
+        } else {
+          console.log('existing exercise for this date is less')
+          setExistingRep(existingExercise.rep)
+          setRemoveRep(rep)
+        }
+      })
+      .catch((err) => console.log(err))
   }
+  console.log(existingRep, removeRep)
 
   return (
     <>
@@ -89,7 +118,11 @@ const EditExercise = () => {
       {removeAlert && (
         <Alert
           icon={thumbdown}
-          message={`You've removed ${rep} reps from your push ups!`}
+          message={
+            existingRep < removeRep
+              ? `Unable to remove more than your existing reps`
+              : `You've removed ${rep} reps from your push ups!`
+          }
         />
       )}
 
