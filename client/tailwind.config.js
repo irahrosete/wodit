@@ -10,6 +10,7 @@ module.exports = {
       wodDarkGray: '#d6d6d6',
       wodYellow: '#fff8b6',
       wodDarkYellow: '#fff48f',
+      wodAlert: '#d9e4dd',
     },
     extend: {
       fontFamily: {
