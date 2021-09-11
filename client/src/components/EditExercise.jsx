@@ -15,11 +15,10 @@ const EditExercise = () => {
     firstName: 'irah',
     activity: 'push ups',
     rep: 0,
-    date: new Date(
-      new Date().getFullYear(),
-      new Date().getMonth(),
-      new Date().getDate()
-    ),
+    date: new Date(),
+    // new Date().getFullYear(),
+    // new Date().getMonth(),
+    // new Date().getDate()
   })
 
   const [rep, setRep] = useState(0)
@@ -28,10 +27,6 @@ const EditExercise = () => {
   const [removeAlert, setRemoveAlert] = useState(false)
 
   const handleAdd = (e) => {
-    e.preventDefault()
-    const newExercise = { ...exercise, rep }
-    console.log(newExercise)
-
     setTimeout(() => {
       setAddAlert(true)
     }, 0)
@@ -39,9 +34,35 @@ const EditExercise = () => {
       setAddAlert(false)
     }, 3000)
 
+    console.log(exercise.date.toISOString().substring(0, 10))
+
     axios
-      .post(`${ENV_URL}/api/exercises/add`, newExercise)
-      .then((res) => console.log(res.data))
+      .get(
+        `${ENV_URL}/api/exercises/query?date=${exercise.date
+          .toISOString()
+          .substring(0, 10)}`
+      )
+      .then((res) => {
+        const existingExercise = res.data[0]
+
+        if (existingExercise) {
+          const newRep = rep + res.data[0].rep
+          axios
+            .post(`${ENV_URL}/api/exercises/update/${existingExercise._id}`, {
+              ...existingExercise,
+              rep: newRep,
+            })
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err))
+          // console.log({ ...existingExercise, rep: newRep })
+        } else {
+          // console.log('no exercise for this date')
+          axios
+            .post(`${ENV_URL}/api/exercises/add`, { ...exercise, rep })
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err))
+        }
+      })
       .catch((err) => console.log(err))
   }
 

@@ -5,7 +5,7 @@ const exerciseSchema = new mongoose.Schema(
     firstName: { type: String, require: true },
     activity: { type: String, require: true },
     rep: { type: Number, require: true },
-    date: { type: Date, require: true },
+    date: { type: String, require: true },
   },
   {
     timestamps: true,
