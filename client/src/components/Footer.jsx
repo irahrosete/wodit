@@ -15,7 +15,7 @@ const Footer = () => {
         <Add width='50' className='mt-1' />
       </Link>
       <Link to='/exer'>
-        <Bar width='40' className='mt-2' />
+        <Bar width='40' className='mt-2 mx-2' />
       </Link>
     </footer>
   )

@@ -18,16 +18,23 @@ const Exercises = () => {
 
   return (
     <div>
-      {exercises.map((exercise) => {
-        return (
-          <>
-            {' '}
-            <p>{exercise.date}</p>
-            <p>{exercise.activity}</p>
-            <p>{exercise.rep}</p>
-          </>
-        )
-      })}
+      {exercises
+        .map((exercise) => {
+          return (
+            <div className='mt-8 mx-32'>
+              <p className='text-center font-body tracking-wider bg-wodGray border border-wodDarkGray p-1'>
+                {exercise.date}
+              </p>
+              <p className='text-center font-body tracking-wider text-2xl'>
+                {exercise.rep}
+              </p>
+              <p className='uppercase text-sm text-center font-body tracking-wider'>
+                {exercise.activity}
+              </p>
+            </div>
+          )
+        })
+        .reverse()}
       <Footer />
     </div>
   )

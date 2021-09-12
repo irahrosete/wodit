@@ -87,7 +87,7 @@ const EditExercise = () => {
       .then((res) => {
         const existingExercise = res.data[0]
 
-        if (existingExercise.rep > rep) {
+        if (existingExercise.rep >= rep) {
           const newRep = existingExercise.rep - rep
           axios
             .post(`${ENV_URL}/api/exercises/update/${existingExercise._id}`, {
