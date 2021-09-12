@@ -27,7 +27,7 @@ This app is inspired by the Push Up Challenge.
 
 ## Planning
 
-Trello Board: https://trello.com/b/Tef96hTL/wodit
+[Trello Board](https://trello.com/b/Tef96hTL/wodit)
 
 ## Tech Stack
 
@@ -59,6 +59,8 @@ Trello Board: https://trello.com/b/Tef96hTL/wodit
 - CORS
 
 ## Wireframes
+
+[Figma](https://www.figma.com/file/NvYpSOdQSfpf8fQ9W6j5c5/WODit?node-id=0%3A1)
 
 ## Testing
 

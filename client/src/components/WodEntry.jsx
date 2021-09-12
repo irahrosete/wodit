@@ -8,11 +8,9 @@ const WodEntry = ({ title, description }) => {
   return (
     <>
       <div className='flex justify-center mt-6'>
-        <h3 className='uppercase font-body tracking-wider text-2xl mb-3'>
-          {title}
-        </h3>
+        <h3 className='textWod uppercase text-2xl mb-3'>{title}</h3>
       </div>
-      <div className='wodBox bg-wodGray'>
+      <div className='boxWod bg-wodGray'>
         <div className='flex justify-end mx-1'>
           {!description && (
             <img src={plus} alt='plus' width='15' className='my-2 mx-1' />
@@ -24,7 +22,7 @@ const WodEntry = ({ title, description }) => {
             </>
           )}
         </div>
-        <p className='p-2 font-body tracking-wider'>{description}</p>
+        <p className='p-2 textWod'>{description}</p>
       </div>
     </>
   )

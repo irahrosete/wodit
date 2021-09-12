@@ -109,6 +109,8 @@ const EditExercise = () => {
 
   return (
     <>
+      <DatePick exercise={exercise} setExercise={setExercise} />
+
       {addAlert && (
         <Alert
           icon={thumbup}
@@ -126,11 +128,10 @@ const EditExercise = () => {
         />
       )}
 
-      <DatePick exercise={exercise} setExercise={setExercise} />
       <div className='flex justify-center'>
-        <h3 className='font-body tracking-wider text-2xl mb-6'>PUSH UPS</h3>
+        <h3 className='textWod text-2xl mb-6'>PUSH UPS</h3>
       </div>
-      <div className='flex items-center justify-center knob-box'>
+      <div className='flex items-center justify-center'>
         <div className='box'>
           <div className='flex justify-center mt-5'>
             <Donut

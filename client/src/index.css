@@ -9,11 +9,11 @@
 }
 
 .btndate {
-  @apply pt-1 pb-2 px-3 bg-wodYellow border border-wodDarkGray rounded font-body tracking-widest shadow-md;
+  @apply pt-1 pb-2 px-3 bg-wodYellow border border-wodDarkGray rounded font-body tracking-widest text-wodBlack shadow-md;
 }
 
 .btn {
-  @apply pt-1 pb-2 px-3 uppercase border border-wodDarkGray rounded font-body tracking-widest shadow-md;
+  @apply pt-1 pb-2 px-3 uppercase border border-wodDarkGray rounded font-body tracking-widest text-wodBlack shadow-md;
   width: 75px;
 }
 
@@ -23,10 +23,14 @@
   height: 350px;
 }
 
-.wodBox {
+.boxWod {
   @apply h-auto w-11/12 border border-wodDarkGray rounded mx-auto;
 }
 
-.knob-box {
-  height: 55vh;
+.boxAlert {
+  @apply flex p-1 my-1 mx-8 justify-center bg-wodYellow border rounded border-wodDarkGray absolute inset-x-0 z-10;
+}
+
+.textWod {
+  @apply font-body tracking-wider text-wodBlack;
 }

@@ -22,13 +22,11 @@ const Exercises = () => {
         .map((exercise) => {
           return (
             <div className='mt-8 mx-32'>
-              <p className='text-center font-body tracking-wider bg-wodGray border rounded border-wodDarkGray p-1'>
+              <p className='text-center textWod bg-wodGray border rounded border-wodDarkGray p-1'>
                 {exercise.date}
               </p>
-              <p className='text-center font-body tracking-wider text-2xl'>
-                {exercise.rep}
-              </p>
-              <p className='uppercase text-sm text-center font-body tracking-wider'>
+              <p className='text-center textWod text-2xl'>{exercise.rep}</p>
+              <p className='uppercase text-sm text-center textWod'>
                 {exercise.activity}
               </p>
             </div>

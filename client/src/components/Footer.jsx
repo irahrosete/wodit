@@ -7,15 +7,15 @@ import { ReactComponent as Bar } from '../img/bar.svg'
 
 const Footer = () => {
   return (
-    <footer className='flex justify-evenly bg-wodGray fixed inset-x-0 bottom-0 py-3'>
+    <footer className='flex justify-evenly bg-wodGray fixed inset-x-0 bottom-0 py-2'>
       <Link to='/wods'>
         <Dumbbell width='60' />
       </Link>
       <Link to='/'>
-        <Add width='50' className='mt-1' />
+        <Add width='50' className='mt-2' />
       </Link>
       <Link to='/exer'>
-        <Bar width='40' className='mt-2 mx-2' />
+        <Bar width='40' className='mt-3 mx-2' />
       </Link>
     </footer>
   )
