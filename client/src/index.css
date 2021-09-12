@@ -23,6 +23,10 @@
   height: 350px;
 }
 
+.wodBox {
+  @apply h-auto w-11/12 border border-wodDarkGray rounded mx-auto;
+}
+
 .knob-box {
   height: 55vh;
 }
