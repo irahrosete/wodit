@@ -10,38 +10,42 @@ import Wods from './components/Wods'
 import Exercises from './components/Exercises'
 import Girls from './pages/Girls'
 import SignOut from './pages/SignOut'
+import Footer from './components/Footer.jsx'
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path='/'>
-          <EditExercise />
-        </Route>
-        <Route path='/login'>
-          <LogIn />
-        </Route>
-        <Route path='/signup'>
-          <SignUp />
-        </Route>
-        <Route path='/wods'>
-          <Wods />
-        </Route>
-        <Route path='/exer'>
-          <Exercises />
-        </Route>
-        <Route path='/girls'>
-          <Girls />
-        </Route>
-        <Route path='/signout'>
-          <SignOut />
-        </Route>
-        <Route path='*'>
-          <Error />
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path='/'>
+            <EditExercise />
+          </Route>
+          <Route path='/login'>
+            <LogIn />
+          </Route>
+          <Route path='/signup'>
+            <SignUp />
+          </Route>
+          <Route path='/wods'>
+            <Wods />
+          </Route>
+          <Route path='/exer'>
+            <Exercises />
+          </Route>
+          <Route path='/girls'>
+            <Girls />
+          </Route>
+          <Route path='/signout'>
+            <SignOut />
+          </Route>
+          <Route path='*'>
+            <Error />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
   )
 }
 

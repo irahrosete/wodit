@@ -3,7 +3,6 @@ import { Donut } from 'react-dial-knob'
 import axios from 'axios'
 
 import DatePick from './DatePick'
-import Footer from './Footer'
 import Alert from './Alert'
 
 import thumbup from '../img/thumb-up'
@@ -162,7 +161,6 @@ const EditExercise = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   )
 }

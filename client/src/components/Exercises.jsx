@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ENV_URL from '../config'
 
-import Footer from './Footer'
-
 const Exercises = () => {
   const [exercises, setExercises] = useState([])
 
@@ -17,11 +15,11 @@ const Exercises = () => {
   }, [])
 
   return (
-    <div>
+    <div className='mb-28'>
       {exercises
         .map((exercise) => {
           return (
-            <div className='mt-8 mx-32'>
+            <div className='pt-8 px-32'>
               <p className='text-center textWod bg-wodGray border rounded border-wodDarkGray p-1'>
                 {exercise.date}
               </p>
@@ -33,7 +31,6 @@ const Exercises = () => {
           )
         })
         .reverse()}
-      <Footer />
     </div>
   )
 }

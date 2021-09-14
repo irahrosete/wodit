@@ -1,11 +1,9 @@
 import React from 'react'
-import Footer from '../components/Footer'
 
 const Girls = () => {
   return (
-    <div>
+    <div className='mb-28'>
       <p>The Girls</p>
-      <Footer />
     </div>
   )
 }
