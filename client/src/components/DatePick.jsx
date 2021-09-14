@@ -11,11 +11,7 @@ const DatePick = ({ exercise, setExercise }) => {
   )
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
     <div className='flex justify-center'>
-      <button
-        className='btndate example-custom-input'
-        onClick={onClick}
-        ref={ref}
-      >
+      <button className='btndate' onClick={onClick} ref={ref}>
         {value}
       </button>
     </div>
@@ -31,7 +27,7 @@ const DatePick = ({ exercise, setExercise }) => {
   }
 
   return (
-    <div className='flex justify-center pt-6 z-0'>
+    <div className='flex justify-center pt-6 px-16 md:px-80 lg:px-96 z-0'>
       <DatePicker
         selected={date}
         onChange={handleDateChange}
