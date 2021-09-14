@@ -31,8 +31,8 @@ const Navbar = () => {
   useOutsideClicker(menuRef)
 
   return (
-    <div ref={menuRef}>
-      <nav className='bg-wodBlack py-3 flex justify-between'>
+    <div ref={menuRef} className='relative z-10'>
+      <nav className='bg-wodBlack py-3 flex justify-between fixed inset-x-0'>
         <div className='flex ml-8'>
           <Link to='/'>
             <img src={logo} alt='logo' width='50' />

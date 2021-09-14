@@ -15,7 +15,7 @@ const Exercises = () => {
   }, [])
 
   return (
-    <div className='mb-28'>
+    <div className='mb-24 pt-16'>
       {exercises
         .map((exercise) => {
           return (

@@ -9,7 +9,8 @@ const Menu = ({ isOpen, setIsOpen }) => {
   }
 
   return (
-    <div className='fixed inset-x-0 z-10'>
+    <div className='fixed inset-x-0 mt-16 z-10'>
+      {/* fixed inset-x-0 */}
       {isOpen && (
         <div className='bg-wodBlack bg-opacity-80 py-2'>
           <Link to='/login' onClick={handleClick}>

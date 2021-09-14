@@ -24,13 +24,14 @@
 }
 
 .boxWod {
-  @apply h-auto w-11/12 border border-wodDarkGray rounded mx-auto;
+  @apply h-auto w-11/12 border border-wodDarkGray rounded mx-auto py-2;
+  width: 350px;
 }
 
 .boxAlert {
-  @apply flex p-1 my-1 mx-8 justify-center bg-wodYellow border rounded border-wodDarkGray absolute inset-x-0 z-10;
+  @apply flex p-1 my-5 mx-8 justify-center bg-wodYellow border rounded border-wodDarkGray absolute inset-x-0 z-10;
 }
 
 .textWod {
-  @apply font-body tracking-wider text-wodBlack;
+  @apply font-body text-wodBlack;
 }

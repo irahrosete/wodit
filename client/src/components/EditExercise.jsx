@@ -107,7 +107,7 @@ const EditExercise = () => {
   console.log(existingRep, removeRep)
 
   return (
-    <>
+    <div className='mb-24 pt-16'>
       <DatePick exercise={exercise} setExercise={setExercise} />
 
       {addAlert && (
@@ -128,7 +128,7 @@ const EditExercise = () => {
       )}
 
       <div className='flex justify-center'>
-        <h3 className='textWod text-2xl mb-6'>PUSH UPS</h3>
+        <h3 className='textWod text-2xl my-6'>PUSH UPS</h3>
       </div>
       <div className='flex items-center justify-center'>
         <div className='box'>
@@ -139,7 +139,7 @@ const EditExercise = () => {
               max={50}
               step={1}
               value={rep}
-              style={{ fontFamily: 'Antonio' }}
+              style={{ fontFamily: 'Antonio', zIndex: 0 }}
               theme={{
                 donutColor: '#323232',
               }}
@@ -161,7 +161,7 @@ const EditExercise = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
