@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 
 import MONGODB_URL from './config.js'
 import exercisesRouter from './routes/exercises.js'
+import usersRouter from './routes/users.js'
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use(express.json())
 mongoose.connect(process.env.MONGODB_URL || MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  // useCreateIndex: true,
 })
 
 const connection = mongoose.connection
@@ -29,8 +31,9 @@ app.get('/', (req, res) => {
   res.status(200).send('Hello from WODit server')
 })
 
-//  routes
+// routes
 app.use('/api/exercises', exercisesRouter)
+app.use('/api/users', usersRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
