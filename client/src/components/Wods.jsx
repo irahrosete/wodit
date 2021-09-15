@@ -1,19 +1,19 @@
 import React from 'react'
 
 import DatePick from './DatePick'
-// import WodEntry from './WodEntry'
+import WodEntry from './WodEntry'
 
-import edit from '../img/edit.svg'
-import trash from '../img/trash.svg'
+// import edit from '../img/edit.svg'
+// import trash from '../img/trash.svg'
 
 const Wods = () => {
   return (
     <div className='mb-24 pt-16'>
       <DatePick />
-      {/* <WodEntry title='warm up' /> */}
-      {/* <WodEntry title='workout' description='workout here' /> */}
+      <WodEntry title='warm up' />
+      <WodEntry title='workout' description='workout here' />
 
-      <div className='flex justify-center mt-6'>
+      {/* <div className='flex justify-center mt-6'>
         <h3 className='textWod uppercase text-2xl mb-3'>warm up</h3>
       </div>
       <div className='boxWod bg-wodGray'>
@@ -23,7 +23,7 @@ const Wods = () => {
             <img src={trash} alt='plus' width='15' className='my-2 mx-1' />
           </>
         </div>
-        <p className='px-2 textWod uppercase font-semibold text-sm'>2 rounds</p>
+        <p className='px-2 textWod uppercase font-bold text-sm'>2 rounds</p>
 
         <p className='px-2 textWod'>5 squat + lunge + lunge</p>
         <p className='px-2 textWod'>5 hollow rocks</p>
@@ -73,7 +73,7 @@ const Wods = () => {
           (shuttle sprints can be any length that space allows, repeat until 30
           m total)
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }

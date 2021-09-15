@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Hello from WODit server')
 })
 
+//  routes
 app.use('/api/exercises', exercisesRouter)
 
 app.listen(port, () => {
