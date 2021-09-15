@@ -1,4 +1,5 @@
 import User from '../models/user.js'
+import { handleErrors } from '../utils/handle-errors.js'
 
 // get sign up page
 const signUpPage = (req, res) => {
@@ -15,7 +16,10 @@ const signUpUser = (req, res) => {
   const { username, email, password } = req.body
   User.create({ username, email, password })
     .then(() => res.status(201).json('User created!'))
-    .catch((err) => res.status(400).json('Error ' + err))
+    .catch((err) => {
+      const errors = handleErrors(err)
+      res.status(400).json({ errors })
+    })
 }
 
 // authenticate current user
