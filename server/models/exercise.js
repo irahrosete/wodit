@@ -2,10 +2,10 @@ import mongoose from 'mongoose'
 
 const exerciseSchema = new mongoose.Schema(
   {
-    firstName: { type: String, require: true },
-    activity: { type: String, require: true },
-    rep: { type: Number, require: true },
-    date: { type: String, require: true },
+    firstName: { type: String, required: true },
+    activity: { type: String, required: true },
+    rep: { type: Number, required: true },
+    date: { type: String, required: true },
   },
   {
     timestamps: true,

@@ -1,19 +1,27 @@
-// import Exercise from '../models/exercise.js'
+import User from '../models/user.js'
 
-const signUpGet = (req, res) => {
+// get sign up page
+const signUpPage = (req, res) => {
   res.send('signing up user')
 }
 
-const logInGet = (req, res) => {
+// get log in page
+const logInPage = (req, res) => {
   res.send('logging in user')
 }
 
-const signUpPost = (req, res) => {
-  res.send('new user sign up')
+// create new user
+const signUpUser = (req, res) => {
+  const { username, email, password } = req.body
+  User.create({ username, email, password })
+    .then(() => res.status(201).json('User created!'))
+    .catch((err) => res.status(400).json('Error ' + err))
 }
 
-const logInPost = (req, res) => {
+// authenticate current user
+const logInUser = (req, res) => {
+  const { username, email, password } = req.body
   res.send('user log in')
 }
 
-export default { signUpGet, logInGet, signUpPost, logInPost }
+export default { signUpPage, logInPage, signUpUser, logInUser }
