@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import pkg from 'validator'
 const { isEmail } = pkg
+import bcrypt from 'bcrypt'
 
 const userSchema = new mongoose.Schema(
   {
@@ -22,6 +23,19 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   }
 )
+
+// hash password before doc is saved to db
+userSchema.pre('save', async function (next) {
+  const salt = await bcrypt.genSalt()
+  this.password = await bcrypt.hash(this.password, salt)
+  next()
+})
+
+// fire a function after doc is saved to db
+userSchema.post('save', function (doc, next) {
+  console.log('new user created and saved', doc)
+  next()
+})
 
 const User = mongoose.model('User', userSchema)
 
