@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import cookieParser from 'cookie-parser'
+// import cookieParser from 'cookie-parser'
 
 import MONGODB_URL from './config.js'
 import exercisesRouter from './routes/exercises.js'
@@ -16,7 +16,7 @@ const port = process.env.PORT || 4000
 // middleware
 app.use(cors())
 app.use(express.json())
-app.use(cookieParser())
+// app.use(cookieParser())
 
 mongoose.connect(process.env.MONGODB_URL || MONGODB_URL, {
   useNewUrlParser: true,
