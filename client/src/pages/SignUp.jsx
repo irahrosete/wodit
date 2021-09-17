@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+
+import ENV_URL from '../config'
 
 const SignUp = () => {
   const [user, setUser] = useState({
@@ -18,6 +21,12 @@ const SignUp = () => {
     const { username, email, password } = user
     if (username && email && password) {
       console.log(user)
+      axios
+        .post(`${ENV_URL}/api/users/signup`, user)
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch((err) => console.log(err))
       setUser({ username: '', email: '', password: '' })
     }
   }
