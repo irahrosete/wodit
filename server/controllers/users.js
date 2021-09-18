@@ -21,26 +21,21 @@ const logInPage = (req, res) => {
 }
 
 // create new user
-const signUpUser = async (req, res) => {
-  const { _id, username, email, password } = req.body
-  try {
-    const user = await User.create({ username, email, password })
-    const token = createToken(iser._id)
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }) // cookie expects time in millisecond
-    res.status(201).json({ user: _id })
-  } catch (err) {
-    const errors = handleErrors(err)
-    res.status(400).json({ errors })
-  }
+const signUpUser = (req, res) => {
+  const { username, email, password } = req.body
+  const newUser = User.create({ username, email, password })
+  const token = createToken(newUser._id)
+  res.cookie('jwt', token, { maxAge: maxAge * 1000 }) // cookie expects time in millisecond
 
-  // User.create({ username, email, password })
-  //   .then(() => {
-  //     res.status(201).json({ user: _id })
-  //   })
-  //   .catch((err) => {
-  //     const errors = handleErrors(err)
-  //     res.status(400).json({ errors })
-  //   })
+  newUser
+    .then((response) => {
+      res.status(201).json({ user: response.username })
+      console.log({ user: response.username })
+    })
+    .catch((err) => {
+      const errors = handleErrors(err)
+      res.status(400).json({ errors })
+    })
 }
 
 // authenticate current user

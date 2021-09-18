@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-// import cookieParser from 'cookie-parser'
+import cookieParser from 'cookie-parser'
 
 import MONGODB_URL from './config.js'
 import exercisesRouter from './routes/exercises.js'
@@ -14,9 +14,28 @@ const app = express()
 const port = process.env.PORT || 4000
 
 // middleware
-app.use(cors())
+app.use(
+  cors({ origin: true, credentials: true })
+  // {
+  // exposedHeaders: ['set-cookie'],
+  // origin: 'http:localhost:4000',
+  // credentials: true,
+  // }
+)
+
+// app.use(function (req, res, next) {
+//   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+//   res.setHeader(
+//     'Access-Control-Allow-Methods',
+//     'GET, POST, OPTIONS, PUT, PATCH, DELETE'
+//   )
+//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+//   res.setHeader('Access-Control-Allow-Credentials', true)
+//   next()
+// })
+
 app.use(express.json())
-// app.use(cookieParser())
+app.use(cookieParser())
 
 mongoose.connect(process.env.MONGODB_URL || MONGODB_URL, {
   useNewUrlParser: true,
@@ -37,6 +56,22 @@ app.get('/', (req, res) => {
 // routes
 app.use('/api/exercises', exercisesRouter)
 app.use('/api/users', usersRouter)
+
+app.get('/set-cookies', (req, res) => {
+  // res.setHeader('Set-Cookie', 'newUser=true')
+  res.cookie('newUser', false)
+  res.cookie('isEmployee', true, {
+    maxAge: 1000 * 60 * 60 * 24,
+    httpOnly: true,
+  })
+  res.send('you got the cookies!')
+})
+
+app.get('/read-cookies', (req, res) => {
+  const cookies = req.headers.cookie
+  console.log(cookies)
+  res.json(cookies)
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)

@@ -35,7 +35,7 @@ const EditExercise = () => {
       setAddAlert(false)
     }, 3000)
 
-    console.log(exercise.date.toISOString().substring(0, 10))
+    // console.log(exercise.date.toISOString().substring(0, 10))
 
     axios
       .get(
@@ -55,7 +55,7 @@ const EditExercise = () => {
             })
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
-          console.log({ ...existingExercise, rep: newRep })
+          // console.log({ ...existingExercise, rep: newRep })
         } else {
           // console.log('no exercise for this date')
           axios
@@ -75,7 +75,7 @@ const EditExercise = () => {
       setRemoveAlert(false)
     }, 3000)
 
-    console.log(exercise.date.toISOString().substring(0, 10))
+    // console.log(exercise.date.toISOString().substring(0, 10))
 
     axios
       .get(
@@ -95,16 +95,16 @@ const EditExercise = () => {
             })
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
-          console.log({ ...existingExercise, rep: newRep })
+          // console.log({ ...existingExercise, rep: newRep })
         } else {
-          console.log('existing exercise for this date is less')
+          // console.log('existing exercise for this date is less')
           setExistingRep(existingExercise.rep)
           setRemoveRep(rep)
         }
       })
       .catch((err) => console.log(err))
   }
-  console.log(existingRep, removeRep)
+  // console.log(existingRep, removeRep)
 
   return (
     <div className='mb-24 pt-16'>

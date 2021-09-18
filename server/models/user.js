@@ -32,10 +32,10 @@ userSchema.pre('save', async function (next) {
 })
 
 // fire a function after doc is saved to db
-userSchema.post('save', function (doc, next) {
-  console.log('new user created and saved', doc)
-  next()
-})
+// userSchema.post('save', function (doc, next) {
+//   console.log('new user created and saved', doc)
+//   next()
+// })
 
 const User = mongoose.model('User', userSchema)
 
