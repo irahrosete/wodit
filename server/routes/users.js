@@ -7,5 +7,6 @@ usersRouter.route('/signup').get(users.signUpPage)
 usersRouter.route('/login').get(users.logInPage)
 usersRouter.route('/signup').post(users.signUpUser)
 usersRouter.route('/login').post(users.logInUser)
+usersRouter.route('/:id').get(users.getById)
 
 export default usersRouter

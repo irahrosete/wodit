@@ -14,6 +14,15 @@ const Exercises = () => {
       .catch((err) => console.log(err))
   }, [])
 
+  // useEffect(() => {
+  //   axios
+  //     .get(`${ENV_URL}/api/users/`)
+  //     .then((res) => {
+  //       setExercises(res.data)
+  //     })
+  //     .catch((err) => console.log(err))
+  // }, [])
+
   return (
     <div className='mb-24 pt-16'>
       {exercises

@@ -58,4 +58,14 @@ const logInUser = (req, res) => {
     })
 }
 
-export default { signUpPage, logInPage, signUpUser, logInUser }
+// get user by id
+const getById = (req, res) => {
+  User.findById(req.params.id)
+    .then((response) => {
+      res.status(200).json(response)
+      console.log(response)
+    })
+    .catch((err) => res.status(400).json('Error ' + err))
+}
+
+export default { signUpPage, logInPage, signUpUser, logInUser, getById }
