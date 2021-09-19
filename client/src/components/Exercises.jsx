@@ -19,7 +19,7 @@ const Exercises = () => {
       {exercises
         .map((exercise) => {
           return (
-            <div className='pt-8 px-32'>
+            <div className='pt-8 px-32' key={exercise._id}>
               <p className='text-center textWod bg-wodGray border rounded border-wodDarkGray p-1'>
                 {exercise.date}
               </p>

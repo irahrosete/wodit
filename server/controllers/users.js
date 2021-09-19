@@ -23,11 +23,11 @@ const logInPage = (req, res) => {
 // create new user
 const signUpUser = (req, res) => {
   const { username, email, password } = req.body
-  const newUser = User.create({ username, email, password })
-  const token = createToken(newUser._id)
+  const user = User.create({ username, email, password })
+  const token = createToken(user._id)
   res.cookie('jwt', token, { maxAge: maxAge * 1000 }) // cookie expects time in millisecond
 
-  newUser
+  user
     .then((response) => {
       res.status(201).json({ user: response.username })
       console.log({ user: response.username })
@@ -43,6 +43,8 @@ const signUpUser = (req, res) => {
 const logInUser = (req, res) => {
   const { email, password } = req.body
   const user = User.login(email, password)
+  const token = createToken(user._id)
+  res.cookie('jwt', token, { maxAge: maxAge * 1000 }) // cookie expects time in millisecond
 
   user
     .then((response) => {
@@ -50,7 +52,9 @@ const logInUser = (req, res) => {
       console.log({ user: response.username })
     })
     .catch((err) => {
-      res.status(400).json({ err })
+      const errors = handleErrors(err)
+      res.status(400).json({ errors })
+      console.log(errors)
     })
 }
 

@@ -11,7 +11,7 @@ const LogIn = () => {
 
   const [error, setError] = useState({
     email: '',
-    password: '',
+    // password: '',
   })
 
   const handleChange = (e) => {
@@ -24,19 +24,19 @@ const LogIn = () => {
     e.preventDefault()
     setError({
       email: '',
-      password: '',
+      // password: '',
     })
     axios
       .post(`${ENV_URL}/api/users/login`, user, {
-        // withCredentials: true,
-        // credentials: 'include',
+        withCredentials: true,
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
       })
       .then((response) => {
         const data = response.data
         console.log(data)
         if (data.user) {
-          // window.location.assign('/')
+          window.location.assign('/')
         }
       })
       .catch((err) => {
@@ -46,7 +46,7 @@ const LogIn = () => {
           setError({
             ...error,
             email: data.errors.email,
-            password: data.errors.password,
+            // password: data.errors.password,
           })
         }
       })
@@ -68,7 +68,7 @@ const LogIn = () => {
           required
           onChange={handleChange}
         />
-        <div>{error.password}</div>
+        {/* <div>{error.password}</div> */}
 
         <button>Log in</button>
       </form>
