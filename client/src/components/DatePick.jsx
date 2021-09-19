@@ -23,7 +23,7 @@ const DatePick = ({ exercise, setExercise }) => {
     // date.getMonth(),
     // date.getDate()
     setDate(noTimeDate)
-    setExercise({ ...exercise, date: noTimeDate })
+    exercise && setExercise({ ...exercise, date: noTimeDate })
   }
 
   return (
