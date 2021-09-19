@@ -9,6 +9,7 @@ const SignUp = () => {
     email: '',
     password: '',
   })
+
   const [error, setError] = useState({
     username: '',
     email: '',

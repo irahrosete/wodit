@@ -1,7 +1,15 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+
+import ENV_URL from '../config'
 
 const LogIn = () => {
   const [user, setUser] = useState({
+    email: '',
+    password: '',
+  })
+
+  const [error, setError] = useState({
     email: '',
     password: '',
   })
@@ -14,11 +22,34 @@ const LogIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const { email, password } = user
-    if (email && password) {
-      console.log(user)
-      setUser({ email: '', password: '' })
-    }
+    setError({
+      email: '',
+      password: '',
+    })
+    axios
+      .post(`${ENV_URL}/api/users/login`, user, {
+        // withCredentials: true,
+        // credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((response) => {
+        const data = response.data
+        console.log(data)
+        if (data.user) {
+          // window.location.assign('/')
+        }
+      })
+      .catch((err) => {
+        console.log(err.response.data.errors)
+        const data = err.response.data
+        if (data.errors) {
+          setError({
+            ...error,
+            email: data.errors.email,
+            password: data.errors.password,
+          })
+        }
+      })
   }
 
   return (
@@ -28,7 +59,7 @@ const LogIn = () => {
 
         <label htmlFor='email'>Email</label>
         <input type='text' name='email' required onChange={handleChange} />
-        <div className='email error'></div>
+        <div>{error.email}</div>
 
         <label htmlFor='password'>Password</label>
         <input
@@ -37,7 +68,7 @@ const LogIn = () => {
           required
           onChange={handleChange}
         />
-        <div className='password error'></div>
+        <div>{error.password}</div>
 
         <button>Log in</button>
       </form>

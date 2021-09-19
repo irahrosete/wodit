@@ -41,8 +41,17 @@ const signUpUser = (req, res) => {
 
 // authenticate current user
 const logInUser = (req, res) => {
-  const { username, email, password } = req.body
-  res.send('user log in')
+  const { email, password } = req.body
+  const user = User.login(email, password)
+
+  user
+    .then((response) => {
+      res.status(200).json({ user: response.username })
+      console.log({ user: response.username })
+    })
+    .catch((err) => {
+      res.status(400).json({ err })
+    })
 }
 
 export default { signUpPage, logInPage, signUpUser, logInUser }
