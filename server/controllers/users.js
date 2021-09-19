@@ -35,6 +35,7 @@ const signUpUser = (req, res) => {
     .catch((err) => {
       const errors = handleErrors(err)
       res.status(400).json({ errors })
+      console.log(errors)
     })
 }
 

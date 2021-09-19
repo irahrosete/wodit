@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 
 import ENV_URL from '../config'
 
@@ -21,62 +21,77 @@ const SignUp = () => {
     setUser({ ...user, [name]: value })
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   const { username, email, password } = user
-  //   if (username && email && password) {
-  //     axios
-  //       .post(`${ENV_URL}/api/users/signup`, user, {
-  //         // withCredentials: true,
-  //         credentials: 'include',
-  //         headers: { 'Content-Type': 'application/json' },
-  //       })
-  //       .then((response) => {
-  //         console.log(response)
-  //       })
-  //       .catch((err) => console.log(err))
-  //   }
-  //   setUser({ username: '', email: '', password: '' })
-  // }
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setError({
       username: '',
       email: '',
       password: '',
     })
-    const { username, email, password } = user
-    try {
-      const res = await fetch(`${ENV_URL}/api/users/signup`, {
-        method: 'POST',
-        // mode: 'cors',
-        body: JSON.stringify({ username, email, password }),
+    axios
+      .post(`${ENV_URL}/api/users/signup`, user, {
         withCredentials: true,
         credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-          // Accept: 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
       })
-      const data = await res.json()
-      console.log(data)
+      .then((response) => {
+        const data = response.data
 
-      if (data.errors) {
-        setError({
-          ...error,
-          username: data.errors.username,
-          email: data.errors.email,
-          password: data.errors.password,
-        })
-      }
-      if (data.user) {
-        window.location.assign('/')
-      }
-    } catch (err) {
-      console.log(err)
-    }
+        if (data.user) {
+          window.location.assign('/')
+        }
+      })
+      .catch((err) => {
+        console.log(err.response.data.errors)
+        const data = err.response.data
+        if (data.errors) {
+          setError({
+            ...error,
+            username: data.errors.username,
+            email: data.errors.email,
+            password: data.errors.password,
+          })
+        }
+      })
   }
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   setError({
+  //     username: '',
+  //     email: '',
+  //     password: '',
+  //   })
+  //   const { username, email, password } = user
+  //   try {
+  //     const res = await fetch(`${ENV_URL}/api/users/signup`, {
+  //       method: 'POST',
+  //       // mode: 'cors',
+  //       body: JSON.stringify({ username, email, password }),
+  //       withCredentials: true,
+  //       credentials: 'include',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     })
+  //     const data = await res.json()
+  //     console.log(data)
+
+  //     if (data.errors) {
+  //       setError({
+  //         ...error,
+  //         username: data.errors.username,
+  //         email: data.errors.email,
+  //         password: data.errors.password,
+  //       })
+  //     }
+  //     if (data.user) {
+  //       window.location.assign('/')
+  //     }
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
   return (
     <div className='mb-24 pt-16'>
