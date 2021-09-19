@@ -11,7 +11,6 @@ const LogIn = () => {
 
   const [error, setError] = useState({
     email: '',
-    // password: '',
   })
 
   const handleChange = (e) => {
@@ -24,7 +23,6 @@ const LogIn = () => {
     e.preventDefault()
     setError({
       email: '',
-      // password: '',
     })
     axios
       .post(`${ENV_URL}/api/users/login`, user, {
@@ -46,7 +44,6 @@ const LogIn = () => {
           setError({
             ...error,
             email: data.errors.email,
-            // password: data.errors.password,
           })
         }
       })
@@ -68,7 +65,7 @@ const LogIn = () => {
           required
           onChange={handleChange}
         />
-        {/* <div>{error.password}</div> */}
+        <div></div>
 
         <button>Log in</button>
       </form>

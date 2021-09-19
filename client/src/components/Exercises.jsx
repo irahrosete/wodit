@@ -5,6 +5,7 @@ import ENV_URL from '../config'
 const Exercises = () => {
   const [exercises, setExercises] = useState([])
 
+  // update to filter for current user
   useEffect(() => {
     axios
       .get(`${ENV_URL}/api/exercises/`)
@@ -14,6 +15,7 @@ const Exercises = () => {
       .catch((err) => console.log(err))
   }, [])
 
+  // get user
   // useEffect(() => {
   //   axios
   //     .get(`${ENV_URL}/api/users/`)
