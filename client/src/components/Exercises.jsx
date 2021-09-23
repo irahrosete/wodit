@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+
 import ENV_URL from '../config'
 
 const Exercises = () => {

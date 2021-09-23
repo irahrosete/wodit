@@ -1,11 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-const Menu = ({ isOpen, setIsOpen }) => {
-  const user = ''
+import ENV_URL from '../config'
 
+const Menu = ({ isOpen, setIsOpen, user, setUser }) => {
   const handleClick = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleLogOut = (e) => {
+    setIsOpen(!isOpen)
+    axios
+      .get(`${ENV_URL}/api/users/logout/`, {
+        withCredentials: true,
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err))
   }
 
   return (
@@ -19,16 +34,16 @@ const Menu = ({ isOpen, setIsOpen }) => {
           <Link to='/signup' onClick={handleClick}>
             <p className='menu text-wodYellow'>Sign up</p>
           </Link>
-          {user && (
-            <div>
-              <Link to='/girls' onClick={handleClick}>
-                <p className='menu text-wodWhite'>The Girls</p>
-              </Link>
-              <Link to='/signout' onClick={handleClick}>
-                <p className='menu text-wodYellow'>Sign out</p>
-              </Link>
-            </div>
-          )}
+          {/* {user && ( */}
+          <div>
+            <Link to='/girls' onClick={handleClick}>
+              <p className='menu text-wodWhite'>The Girls</p>
+            </Link>
+            <Link to='/login' onClick={handleLogOut}>
+              <p className='menu text-wodYellow'>Sign out</p>
+            </Link>
+          </div>
+          {/* )} */}
         </div>
       )}
     </div>

@@ -7,6 +7,8 @@ import { ReactComponent as User } from '../img/user.svg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [user, setUser] = useState('')
+
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
@@ -49,7 +51,12 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Menu
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        user={user}
+        setUser={setUser}
+      />
     </div>
   )
 }

@@ -15,17 +15,12 @@ const signUpPage = (req, res) => {
   res.send('signing up user')
 }
 
-// get log in page
-const logInPage = (req, res) => {
-  res.send('logging in user')
-}
-
 // create new user
 const signUpUser = (req, res) => {
   const { username, email, password } = req.body
   const user = User.create({ username, email, password })
   const token = createToken(user._id)
-  res.cookie('jwt', token, { maxAge: maxAge * 1000 }) // cookie expects time in millisecond
+  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }) // cookie expects time in millisecond
 
   user
     .then((response) => {
@@ -44,7 +39,7 @@ const logInUser = (req, res) => {
   const { email, password } = req.body
   const user = User.login(email, password)
   const token = createToken(user._id)
-  res.cookie('jwt', token, { maxAge: maxAge * 1000 }) // cookie expects time in millisecond
+  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }) // cookie expects time in millisecond
 
   user
     .then((response) => {
@@ -68,4 +63,16 @@ const getById = (req, res) => {
     .catch((err) => res.status(400).json('Error ' + err))
 }
 
-export default { signUpPage, logInPage, signUpUser, logInUser, getById }
+// log current user out
+const logOutUser = (req, res) => {
+  res.cookie('jwt', '', { httpOnly: true, maxAge: 1 }) // replace cookie with a blank jwt
+  res.status(200).send('logging user out')
+}
+
+export default {
+  signUpPage,
+  signUpUser,
+  logInUser,
+  getById,
+  logOutUser,
+}
