@@ -4,7 +4,7 @@ import axios from 'axios'
 import ENV_URL from '../config'
 
 const SignUp = () => {
-  const [user, setUser] = useState({
+  const [userInput, setUserInput] = useState({
     username: '',
     email: '',
     password: '',
@@ -19,7 +19,7 @@ const SignUp = () => {
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-    setUser({ ...user, [name]: value })
+    setUserInput({ ...userInput, [name]: value })
   }
 
   const handleSubmit = (e) => {
@@ -30,7 +30,7 @@ const SignUp = () => {
       password: '',
     })
     axios
-      .post(`${ENV_URL}/api/users/signup`, user, {
+      .post(`${ENV_URL}/api/users/signup`, userInput, {
         withCredentials: true,
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },

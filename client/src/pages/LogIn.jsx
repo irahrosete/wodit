@@ -9,9 +9,6 @@ const LogIn = () => {
     password: '',
   })
 
-  const [user, setUser] = useState({})
-  // console.log(user)
-
   const [error, setError] = useState({
     email: '',
   })
@@ -35,15 +32,9 @@ const LogIn = () => {
       })
       .then((response) => {
         const data = response.data
-        // console.log(data)
+        console.log(data)
+
         if (data) {
-          setUser({
-            ...user,
-            id: data.id,
-            username: data.username,
-            email: data.email,
-          })
-          console.log(user)
           window.location.assign('/')
         }
       })
@@ -63,11 +54,9 @@ const LogIn = () => {
     <div className='mb-24 pt-16'>
       <form onSubmit={handleSubmit}>
         <h2>Login</h2>
-
         <label htmlFor='email'>Email</label>
         <input type='text' name='email' required onChange={handleChange} />
         <div>{error.email}</div>
-
         <label htmlFor='password'>Password</label>
         <input
           type='password'

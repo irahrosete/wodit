@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import ENV_URL from '../config'
 
-const Menu = ({ isOpen, setIsOpen, user, setUser }) => {
+const Menu = ({ isOpen, setIsOpen, user }) => {
   const handleClick = () => {
     setIsOpen(!isOpen)
   }
