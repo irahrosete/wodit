@@ -8,7 +8,7 @@ const getAll = (req, res) => {
 }
 
 // get exercises by date and user
-const getByDate = (req, res) => {
+const getByDateAndUser = (req, res) => {
   Exercise.find({ date: req.query.date, user: req.query.user })
     .then((exercises) => res.json(exercises))
     .catch((err) => res.status(400).json('Error ' + err))
@@ -48,4 +48,4 @@ const update = (req, res) => {
     .catch((err) => res.status(400).json('Error ' + err))
 }
 
-export default { getAll, getByDate, add, update }
+export default { getAll, getByDateAndUser, add, update }

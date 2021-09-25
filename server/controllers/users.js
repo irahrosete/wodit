@@ -30,8 +30,18 @@ const logInUser = (req, res) => {
 
   user
     .then((response) => {
-      res.status(200).json(response)
-      console.log(response)
+      res
+        .status(200)
+        .json({
+          id: response.id,
+          username: response.username,
+          email: response.email,
+        })
+      console.log({
+        id: response.id,
+        username: response.username,
+        email: response.email,
+      })
     })
     .catch((err) => {
       const errors = handleErrors(err)

@@ -4,10 +4,13 @@ import axios from 'axios'
 import ENV_URL from '../config'
 
 const LogIn = () => {
-  const [user, setUser] = useState({
+  const [userInput, setUserInput] = useState({
     email: '',
     password: '',
   })
+
+  const [user, setUser] = useState({})
+  // console.log(user)
 
   const [error, setError] = useState({
     email: '',
@@ -16,7 +19,7 @@ const LogIn = () => {
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-    setUser({ ...user, [name]: value })
+    setUserInput({ ...userInput, [name]: value })
   }
 
   const handleSubmit = (e) => {
@@ -25,21 +28,27 @@ const LogIn = () => {
       email: '',
     })
     axios
-      .post(`${ENV_URL}/api/users/login`, user, {
+      .post(`${ENV_URL}/api/users/login`, userInput, {
         withCredentials: true,
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
       })
       .then((response) => {
         const data = response.data
-        console.log(data)
-        if (data.username) {
+        // console.log(data)
+        if (data) {
+          setUser({
+            ...user,
+            id: data.id,
+            username: data.username,
+            email: data.email,
+          })
+          console.log(user)
           window.location.assign('/')
         }
       })
       .catch((err) => {
-        // console.log(err.response.data.errors)
-        console.log(err.response.data)
+        console.log(err.response.data.errors)
         const data = err.response.data
         if (data.errors) {
           setError({
@@ -67,7 +76,6 @@ const LogIn = () => {
           onChange={handleChange}
         />
         <div></div>
-
         <button>Log in</button>
       </form>
     </div>
