@@ -25,9 +25,11 @@ const Menu = ({ isOpen, setIsOpen, user, setUser }) => {
 
   return (
     <div className='fixed inset-x-0 mt-16 z-10'>
-      {/* fixed inset-x-0 */}
       {isOpen && (
         <div className='bg-wodBlack bg-opacity-80 py-2'>
+          <Link to='/girls' onClick={handleClick}>
+            <p className='menu text-wodWhite'>The Girls</p>
+          </Link>
           <Link to='/login' onClick={handleClick}>
             <p className='menu text-wodWhite'>Log in</p>
           </Link>
@@ -35,14 +37,9 @@ const Menu = ({ isOpen, setIsOpen, user, setUser }) => {
             <p className='menu text-wodYellow'>Sign up</p>
           </Link>
           {/* {user && ( */}
-          <div>
-            <Link to='/girls' onClick={handleClick}>
-              <p className='menu text-wodWhite'>The Girls</p>
-            </Link>
-            <Link to='/login' onClick={handleLogOut}>
-              <p className='menu text-wodYellow'>Sign out</p>
-            </Link>
-          </div>
+          <Link to='/login' onClick={handleLogOut}>
+            <p className='menu text-wodYellow'>Sign out</p>
+          </Link>
           {/* )} */}
         </div>
       )}

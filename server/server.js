@@ -46,7 +46,6 @@ mongoose.connect(process.env.MONGODB_URL || MONGODB_URL, {
 const connection = mongoose.connection
 connection.once('open', () => {
   console.log('MongoDB database connection established successfully')
-  console.log(MONGODB_URL)
 })
 
 app.get('/', (req, res) => {
@@ -57,21 +56,21 @@ app.get('/', (req, res) => {
 app.use('/api/exercises', exercisesRouter)
 app.use('/api/users', usersRouter)
 
-app.get('/set-cookies', (req, res) => {
-  // res.setHeader('Set-Cookie', 'newUser=true')
-  res.cookie('newUser', false)
-  res.cookie('isEmployee', true, {
-    maxAge: 1000 * 60 * 60 * 24,
-    httpOnly: true,
-  })
-  res.send('you got the cookies!')
-})
+// app.get('/set-cookies', (req, res) => {
+//   // res.setHeader('Set-Cookie', 'newUser=true')
+//   res.cookie('newUser', false)
+//   res.cookie('isEmployee', true, {
+//     maxAge: 1000 * 60 * 60 * 24,
+//     httpOnly: true,
+//   })
+//   res.send('you got the cookies!')
+// })
 
-app.get('/read-cookies', (req, res) => {
-  const cookies = req.headers.cookie
-  console.log(cookies)
-  res.json(cookies)
-})
+// app.get('/read-cookies', (req, res) => {
+//   const cookies = req.headers.cookie
+//   console.log(cookies)
+//   res.json(cookies)
+// })
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)

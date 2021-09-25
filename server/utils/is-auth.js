@@ -12,6 +12,7 @@ export const isAuth = (req, res, next) => {
         // res.redirect('/login')
       } else {
         console.log(decodedToken)
+        req.user = decodedToken
         next()
       }
     })

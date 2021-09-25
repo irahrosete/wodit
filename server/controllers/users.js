@@ -1,14 +1,6 @@
-import jwt from 'jsonwebtoken'
 import User from '../models/user.js'
 import { handleErrors } from '../utils/handle-errors.js'
-
-// jwt expects time in seconds
-const maxAge = 24 * 60 * 60 // 1 day
-const createToken = (id) => {
-  return jwt.sign({ id }, process.env.SECRET, {
-    expiresIn: maxAge,
-  })
-}
+import { createToken, maxAge } from '../utils/create-token.js'
 
 // get sign up page
 const signUpPage = (req, res) => {
@@ -39,7 +31,7 @@ const logInUser = (req, res) => {
   const { email, password } = req.body
   const user = User.login(email, password)
   const token = createToken(user._id)
-  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }) // cookie expects time in millisecond
+  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }) // cookie expects time in millisecond, jwt expects time in seconds
 
   user
     .then((response) => {
