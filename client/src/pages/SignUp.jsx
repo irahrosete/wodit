@@ -38,7 +38,7 @@ const SignUp = () => {
       .then((response) => {
         const data = response.data
 
-        if (data.user) {
+        if (data.username) {
           window.location.assign('/')
         }
       })

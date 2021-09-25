@@ -9,7 +9,6 @@ import Error from './pages/Error'
 import Wods from './components/Wods'
 import Exercises from './components/Exercises'
 import Girls from './pages/Girls'
-import SignOut from './pages/SignOut'
 import Footer from './components/Footer.jsx'
 
 const App = () => {
@@ -35,9 +34,6 @@ const App = () => {
           </Route>
           <Route path='/girls'>
             <Girls />
-          </Route>
-          <Route path='/signout'>
-            <SignOut />
           </Route>
           <Route path='*'>
             <Error />

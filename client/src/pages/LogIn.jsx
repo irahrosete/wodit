@@ -33,12 +33,13 @@ const LogIn = () => {
       .then((response) => {
         const data = response.data
         console.log(data)
-        if (data.user) {
+        if (data.username) {
           window.location.assign('/')
         }
       })
       .catch((err) => {
-        console.log(err.response.data.errors)
+        // console.log(err.response.data.errors)
+        console.log(err.response.data)
         const data = err.response.data
         if (data.errors) {
           setError({

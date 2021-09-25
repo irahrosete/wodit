@@ -16,8 +16,8 @@ const signUpUser = (req, res) => {
 
   user
     .then((response) => {
-      res.status(201).json({ user: response.username })
-      console.log({ user: response.username })
+      res.status(201).json(response)
+      console.log(response)
     })
     .catch((err) => {
       const errors = handleErrors(err)
@@ -35,8 +35,8 @@ const logInUser = (req, res) => {
 
   user
     .then((response) => {
-      res.status(200).json({ user: response.username })
-      console.log({ user: response })
+      res.status(200).json(response)
+      console.log(response)
     })
     .catch((err) => {
       const errors = handleErrors(err)
@@ -58,7 +58,7 @@ const getById = (req, res) => {
 // log current user out
 const logOutUser = (req, res) => {
   res.cookie('jwt', '', { httpOnly: true, maxAge: 1 }) // replace cookie with a blank jwt
-  res.status(200).send('logging user out')
+  res.status(200).json('')
 }
 
 export default {

@@ -7,7 +7,7 @@ import { ReactComponent as User } from '../img/user.svg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState('irah')
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
