@@ -14,7 +14,7 @@
 
 .btn {
   @apply pt-1 pb-2 px-3 uppercase border border-wodDarkGray rounded font-body tracking-widest text-wodBlack shadow-md;
-  width: 75px;
+  width: 85px;
 }
 
 .box {

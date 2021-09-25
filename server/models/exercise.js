@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 
 const exerciseSchema = new mongoose.Schema(
   {
-    firstName: { type: String, required: true },
+    // user: { type: mongoose.Schema.Types.ObjectID, ref: 'User', required: true },
+    user: { type: String, required: true },
     activity: { type: String, required: true },
     rep: { type: Number, required: true },
     date: { type: String, required: true },

@@ -26,7 +26,7 @@ const signUpUser = (req, res) => {
     })
 }
 
-// authenticate current user
+// authenticate existing user
 const logInUser = (req, res) => {
   const { email, password } = req.body
   const user = User.login(email, password)
@@ -36,7 +36,7 @@ const logInUser = (req, res) => {
   user
     .then((response) => {
       res.status(200).json({ user: response.username })
-      console.log({ user: response.username })
+      console.log({ user: response })
     })
     .catch((err) => {
       const errors = handleErrors(err)

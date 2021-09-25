@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Donut } from 'react-dial-knob'
 import axios from 'axios'
 
@@ -11,7 +12,7 @@ import ENV_URL from '../config'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    firstName: 'irah',
+    user: 'luigi',
     activity: 'push ups',
     rep: 0,
     date: new Date(),
@@ -20,6 +21,7 @@ const EditExercise = () => {
     // new Date().getDate()
   })
 
+  // const [user, setUser] = useState('irah')
   const [rep, setRep] = useState(0)
   const [existingRep, setExistingRep] = useState(0)
   const [removeRep, setRemoveRep] = useState(0)
@@ -41,10 +43,11 @@ const EditExercise = () => {
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
           .toISOString()
-          .substring(0, 10)}`
+          .substring(0, 10)}&user=${exercise.user}`
       )
       .then((res) => {
         const existingExercise = res.data[0]
+        console.log(res.data)
 
         if (existingExercise) {
           const newRep = rep + existingExercise.rep
@@ -148,16 +151,33 @@ const EditExercise = () => {
             ></Donut>
           </div>
           <div className='flex justify-between'>
-            <div className='ml-5 mt-5 w-10'>
-              <button className='btn bg-wodGray' onClick={handleRemove}>
-                remove
-              </button>
-            </div>
-            <div className='mr-5 mt-5'>
-              <button className='btn bg-wodYellow' onClick={handleAdd}>
-                add
-              </button>
-            </div>
+            {exercise.user ? (
+              <>
+                <div className='ml-5 mt-5'>
+                  <button className='btn bg-wodGray' onClick={handleRemove}>
+                    remove
+                  </button>
+                </div>
+                <div className='mr-5 mt-5'>
+                  <button className='btn bg-wodYellow' onClick={handleAdd}>
+                    add
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className='ml-5 mt-5'>
+                  <button className='btn bg-wodGray'>
+                    <Link to='/login'>log in</Link>
+                  </button>
+                </div>
+                <div className='mr-5 mt-5'>
+                  <button className='btn bg-wodYellow'>
+                    <Link to='/signup'>sign up</Link>
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
