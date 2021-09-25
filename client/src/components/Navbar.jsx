@@ -1,29 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 
-import ENV_URL from '../config'
+// import ENV_URL from '../config'
 import Menu from './Menu'
 import logo from '../img/wodit-logo.jpg'
 import { ReactComponent as User } from '../img/user.svg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  // const [user, setUser] = useState({})
+  const [user, setUser] = useState('irah')
 
-  useEffect(() => {
-    axios
-      .get(`${ENV_URL}/api/users/user`, {
-        withCredentials: true,
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-      })
-      .then((res) => {
-        // setUser(res.data)
-        console.log(res)
-      })
-      .catch((err) => console.log(err))
-  }, [])
+  // useEffect(() => {
+  //   axios
+  //     .get(`${ENV_URL}/api/users/user`, {
+  //       withCredentials: true,
+  //       credentials: 'include',
+  //       headers: { 'Content-Type': 'application/json' },
+  //     })
+  //     .then((res) => {
+  //       // setUser(res.data)
+  //       console.log(res)
+  //     })
+  //     .catch((err) => console.log(err))
+  // }, [])
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -62,6 +62,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='flex items-center mr-8'>
+          <p className='font-body text-wodWhite tracking-widest mr-3'>{user}</p>
           <button onClick={toggleMenu}>
             <User fill='#ffffff' width='25' />
           </button>
@@ -70,8 +71,8 @@ const Navbar = () => {
       <Menu
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        // user={user}
-        // setUser={setUser}
+        user={user}
+        setUser={setUser}
       />
     </div>
   )

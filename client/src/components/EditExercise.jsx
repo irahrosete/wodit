@@ -12,7 +12,7 @@ import ENV_URL from '../config'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    user: '',
+    user: 'irah',
     activity: 'push ups',
     rep: 0,
     date: new Date(),
