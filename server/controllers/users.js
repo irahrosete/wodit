@@ -2,11 +2,6 @@ import User from '../models/user.js'
 import { handleErrors } from '../utils/handle-errors.js'
 import { createToken, maxAge } from '../utils/create-token.js'
 
-// get sign up page
-const signUpPage = (req, res) => {
-  res.send('signing up user')
-}
-
 // create new user
 const signUpUser = (req, res) => {
   const { username, email, password } = req.body
@@ -62,7 +57,6 @@ const logOutUser = (req, res) => {
 }
 
 export default {
-  signUpPage,
   signUpUser,
   logInUser,
   getById,

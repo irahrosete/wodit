@@ -3,7 +3,6 @@ import users from '../controllers/users.js'
 
 const usersRouter = express.Router()
 
-usersRouter.route('/signup').get(users.signUpPage)
 usersRouter.route('/logout').get(users.logOutUser)
 usersRouter.route('/signup').post(users.signUpUser)
 usersRouter.route('/login').post(users.logInUser)
