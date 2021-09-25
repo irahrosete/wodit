@@ -1,13 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
+import ENV_URL from '../config'
 import Menu from './Menu'
 import logo from '../img/wodit-logo.jpg'
 import { ReactComponent as User } from '../img/user.svg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [user, setUser] = useState('irah')
+  // const [user, setUser] = useState({})
+
+  useEffect(() => {
+    axios
+      .get(`${ENV_URL}/api/users/user`, {
+        withCredentials: true,
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((res) => {
+        // setUser(res.data)
+        console.log(res)
+      })
+      .catch((err) => console.log(err))
+  }, [])
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -54,8 +70,8 @@ const Navbar = () => {
       <Menu
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        user={user}
-        setUser={setUser}
+        // user={user}
+        // setUser={setUser}
       />
     </div>
   )
