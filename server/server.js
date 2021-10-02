@@ -3,6 +3,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
+import jwt from 'jsonwebtoken'
 
 import MONGODB_URL from './config.js'
 import exercisesRouter from './routes/exercises.js'
@@ -46,6 +47,28 @@ mongoose.connect(process.env.MONGODB_URL || MONGODB_URL, {
 const connection = mongoose.connection
 connection.once('open', () => {
   console.log('MongoDB database connection established successfully')
+})
+
+app.use((req, res, next) => {
+  console.log('headers: ', req.headers.authorization)
+  if (req.headers && req.headers.authorization) {
+    jwt.verify(
+      req.headers.authorization.split(' ')[1],
+      process.env.SECRET,
+      (err, decode) => {
+        if (err) {
+          req.user = undefined
+        } else {
+          req.user = decode
+          console.log(req.user)
+        }
+        next()
+      }
+    )
+  } else {
+    req.user = undefined
+    next()
+  }
 })
 
 app.get('/', (req, res) => {

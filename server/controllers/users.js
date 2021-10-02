@@ -2,6 +2,7 @@ import User from '../models/user.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
+// create new user
 const signUpUser = (req, res) => {
   const newUser = new User(req.body)
   newUser.password = bcrypt.hashSync(req.body.password, 10)
@@ -12,11 +13,15 @@ const signUpUser = (req, res) => {
     }
     return res.json({
       username: user.username,
-      token: jwt.sign({ _id: user._id }, process.env.SECRET),
+      token: jwt.sign(
+        { userid: user._id, username: user.username },
+        process.env.SECRET
+      ),
     })
   })
 }
 
+// authenticate existing user
 const logInUser = (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err) {
@@ -29,7 +34,10 @@ const logInUser = (req, res) => {
     }
     return res.json({
       username: user.username,
-      token: jwt.sign({ _id: user._id }, process.env.SECRET),
+      jwt: jwt.sign(
+        { userid: user._id, username: user.username },
+        process.env.SECRET
+      ),
     })
   })
 }

@@ -2,7 +2,7 @@ import Exercise from '../models/exercise.js'
 
 // get all exercises
 const getAll = (req, res) => {
-  Exercise.find()
+  Exercise.find({ userid: req.user.userid })
     .then((exercises) => res.json(exercises))
     .catch((err) => res.status(400).json('Error ' + err))
 }
@@ -16,12 +16,13 @@ const getByDateAndUser = (req, res) => {
 
 // add an exercise
 const add = (req, res) => {
-  const user = req.body.user
+  const userid = req.user.userid
+  const username = req.user.username
   const activity = req.body.activity
   const rep = Number(req.body.rep)
   const date = req.body.date.toString().substring(0, 10)
 
-  const newExercise = new Exercise({ user, activity, rep, date })
+  const newExercise = new Exercise({ userid, username, activity, rep, date })
 
   newExercise
     .save()
@@ -35,7 +36,8 @@ const add = (req, res) => {
 const update = (req, res) => {
   Exercise.findById(req.params.id)
     .then((exercise) => {
-      exercise.user = req.body.user
+      exercise.userid = req.user.userid
+      exercise.username = req.user.username
       exercise.activity = req.body.activity
       exercise.rep = Number(req.body.rep)
       exercise.date = req.body.date.toString().substring(0, 10)
