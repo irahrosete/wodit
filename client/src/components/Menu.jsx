@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import ENV_URL from '../config'
 
-const Menu = ({ isOpen, setIsOpen, user }) => {
+const Menu = ({ isOpen, setIsOpen, username }) => {
   const handleClick = () => {
     setIsOpen(!isOpen)
   }
@@ -30,7 +30,7 @@ const Menu = ({ isOpen, setIsOpen, user }) => {
           <Link to='/girls' onClick={handleClick}>
             <p className='menu text-wodWhite'>The Girls</p>
           </Link>
-          {user && (
+          {username && (
             <Link to='/' onClick={handleLogOut}>
               <p className='menu text-wodYellow'>Sign out</p>
             </Link>
