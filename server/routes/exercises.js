@@ -4,6 +4,8 @@ import { isAuth } from '../utils/is-auth.js'
 
 const exercisesRouter = express.Router()
 
+// exercisesRouter.use(isAuth)
+
 exercisesRouter.route('/').get(exercises.getAll)
 exercisesRouter.route('/query').get(exercises.getByDateAndUser)
 exercisesRouter.route('/add').post(exercises.add)
