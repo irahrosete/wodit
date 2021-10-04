@@ -79,15 +79,13 @@ const getUser = (req, res) => {
   if (!claim) {
     return res.status(401).json('Unauthenticated user')
   }
-  const user = User.findOne({ _id: claim._id })
+  const user = User.findOne({ _id: claim.userid })
   user
     .then((response) => {
-      // res.status(200).json(response)
+      res.status(200).json(response)
       console.log(response)
     })
     .catch((err) => res.status(400).json('Error ' + err))
-
-  // res.send(cookie)
 }
 
 // get user by id

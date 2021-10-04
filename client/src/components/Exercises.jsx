@@ -1,30 +1,21 @@
 import React, { useState, useEffect } from 'react'
+// import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import ENV_URL from '../config'
 
-const Exercises = () => {
+const Exercises = ({ component: Component, ...rest }) => {
   const [exercises, setExercises] = useState([])
 
-  // update to filter for current user
+  // update to filter for current user and protect page
   useEffect(() => {
     axios
-      .get(`${ENV_URL}/api/exercises/`)
+      .get(`${ENV_URL}/api/exercises/`, { withCredentials: true })
       .then((res) => {
         setExercises(res.data)
       })
       .catch((err) => console.log(err))
   }, [])
-
-  // get user
-  // useEffect(() => {
-  //   axios
-  //     .get(`${ENV_URL}/api/users/`)
-  //     .then((res) => {
-  //       setExercises(res.data)
-  //     })
-  //     .catch((err) => console.log(err))
-  // }, [])
 
   return (
     <div className='mb-24 pt-16'>
