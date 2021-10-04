@@ -32,10 +32,10 @@ const LogIn = () => {
       })
       .then((response) => {
         const data = response.data
-        console.log(data)
+        console.log('user', data)
 
         if (data) {
-          window.location.assign('/')
+          // window.location.assign('/')
         }
       })
       .catch((err) => {

@@ -12,7 +12,8 @@ import ENV_URL from '../config'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    user: 'irah',
+    userid: '615865595ef88d11dba4a025',
+    username: 'yoshi',
     activity: 'push ups',
     rep: 0,
     date: new Date(),
@@ -151,7 +152,7 @@ const EditExercise = () => {
             ></Donut>
           </div>
           <div className='flex justify-between'>
-            {exercise.user ? (
+            {exercise.username ? (
               <>
                 <div className='ml-5 mt-5'>
                   <button className='btn bg-wodGray' onClick={handleRemove}>

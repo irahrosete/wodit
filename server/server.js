@@ -49,8 +49,8 @@ connection.once('open', () => {
   console.log('MongoDB database connection established successfully')
 })
 
+// decode jwt from logged in user
 app.use((req, res, next) => {
-  console.log('headers: ', req.headers.authorization)
   if (req.headers && req.headers.authorization) {
     jwt.verify(
       req.headers.authorization.split(' ')[1],
@@ -60,7 +60,6 @@ app.use((req, res, next) => {
           req.user = undefined
         } else {
           req.user = decode
-          console.log(req.user)
         }
         next()
       }

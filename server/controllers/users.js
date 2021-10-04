@@ -12,6 +12,7 @@ const signUpUser = (req, res) => {
       return res.json({ error: err.message })
     }
     return res.json({
+      userid: user._id,
       username: user.username,
       token: jwt.sign(
         { userid: user._id, username: user.username },
@@ -33,6 +34,7 @@ const logInUser = (req, res) => {
       return res.json({ message: 'Authentication failed' })
     }
     return res.json({
+      userid: user._id,
       username: user.username,
       jwt: jwt.sign(
         { userid: user._id, username: user.username },
