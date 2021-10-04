@@ -5,7 +5,7 @@ Designer & Developer: IRAH ROSETE
 url: https://wodit.netlify.app/<br>
 Git Repo: https://github.com/irahrosete/wodit
 
-## About
+## ℹ About
 
 In June 2021, I participated in the Push Up Challenge and did 3,318 push ups in 25 days. The habit stuck with me and three months on, I am still doing daily push ups.
 
@@ -13,7 +13,7 @@ This app is inspired by the [Push Up Challenge](https://www.thepushupchallenge.c
 
 I have added a few more features that I think is beneficial for anyone wanting to have a structured workout to follow at home, outdoors or in the gym (once we're out of this lockdown in Sydney).
 
-## Features
+## 🔑 Features
 
 - **Push Ups Tracker**. Save, add, remove and track the number of push ups you made each day.
 - **WOD (Workout of the Day)**. Follow a structured workout each day. Add your own or keep the one recommended by me.
@@ -21,19 +21,19 @@ I have added a few more features that I think is beneficial for anyone wanting t
 - **User Authentication**. Sign up, Log in, Sign out to use the application.
 - **Admin Dashboard**.
 
-## Target Audience
+## 🧍‍♂️ Target Audience
 
 This app is for anyone who wishes to form a new habit, follow a workout, and keep track of their push up numbers.
 
-## User Stories
+## 📒 User Stories
 
-## Sitemap
+## 🗺 Sitemap
 
-## Planning
+## ☑ Planning
 
 [Trello Board](https://trello.com/b/Tef96hTL/wodit)
 
-## Tech Stack
+## 🧱 Tech Stack
 
 - MongoDB
 - Express JS
@@ -66,12 +66,12 @@ This app is for anyone who wishes to form a new habit, follow a workout, and kee
 - Validator
 - JSON Web Token
 
-## Wireframes
+## 📝 Wireframes
 
 [Figma](https://www.figma.com/file/NvYpSOdQSfpf8fQ9W6j5c5/WODit?node-id=0%3A1)
 
-## Testing
+## 🧪 Testing
 
-## Deployment
+## 🚀 Deployment
 
-## Local Setup
+## 💾 Local Setup
