@@ -12,7 +12,8 @@ import ENV_URL from '../config'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    userid: '61470621ba68ea89cc468c75',
+    userid: '',
+    // userid: '61470621ba68ea89cc468c75',
     username: 'luigi',
     activity: 'push ups',
     rep: 0,
