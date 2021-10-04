@@ -1,4 +1,4 @@
-# <img src='./client/src/img/wodit-logo.jpg' alt='wodit logo' width='50' /> WODit
+# <img src='./client/src/img/wodit-logo.jpg' alt='wodit logo' width='75' /> WODit
 
 Designer & Developer: IRAH ROSETE
 
