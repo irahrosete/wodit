@@ -9,7 +9,11 @@ const getAll = (req, res) => {
 
 // get exercises by date and user
 const getByDateAndUser = (req, res) => {
-  Exercise.find({ date: req.query.date, user: req.query.user })
+  Exercise.find({
+    date: req.query.date,
+    username: req.query.username,
+    userid: req.query.userid,
+  })
     .then((exercises) => res.json(exercises))
     .catch((err) => res.status(400).json('Error ' + err))
 }

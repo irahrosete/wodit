@@ -34,7 +34,6 @@ const EditExercise = () => {
       : setExercise({ ...exercise })
   }, [])
 
-  // const [user, setUser] = useState('irah')
   const [rep, setRep] = useState(0)
   const [existingRep, setExistingRep] = useState(0)
   const [removeRep, setRemoveRep] = useState(0)
@@ -56,11 +55,13 @@ const EditExercise = () => {
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
           .toISOString()
-          .substring(0, 10)}&userid=${exercise.userid}`
+          .substring(0, 10)}&userid=${exercise.userid}&username=${
+          exercise.username
+        }`
       )
       .then((res) => {
         const existingExercise = res.data[0]
-        // console.log(res.data)
+        console.log(res.data)
 
         if (existingExercise) {
           const newRep = rep + existingExercise.rep
@@ -91,13 +92,13 @@ const EditExercise = () => {
       setRemoveAlert(false)
     }, 3000)
 
-    // console.log(exercise.date.toISOString().substring(0, 10))
-
     axios
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
           .toISOString()
-          .substring(0, 10)}&userid=${exercise.userid}`
+          .substring(0, 10)}&userid=${exercise.userid}&username=${
+          exercise.username
+        }`
       )
       .then((res) => {
         const existingExercise = res.data[0]
@@ -111,7 +112,7 @@ const EditExercise = () => {
             })
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
-          // console.log({ ...existingExercise, rep: newRep })
+          console.log({ ...existingExercise, rep: newRep })
         } else {
           // console.log('existing exercise for this date is less')
           setExistingRep(existingExercise.rep)
