@@ -55,12 +55,6 @@ const logInUser = (req, res) => {
     })
 }
 
-// log current user out
-const logOutUser = (req, res) => {
-  // res.cookie('jwt', '', { httpOnly: true, maxAge: 1 }) // replace cookie with a blank jwt
-  res.status(200).json('')
-}
-
 // get logged in user
 const getUser = (req, res) => {
   const cookie = req.cookies.jwt
@@ -91,7 +85,6 @@ const getById = (req, res) => {
 export default {
   signUpUser,
   logInUser,
-  logOutUser,
   getUser,
   getById,
 }

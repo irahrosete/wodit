@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Donut } from 'react-dial-knob'
 import axios from 'axios'
@@ -23,6 +23,16 @@ const EditExercise = () => {
     // new Date().getMonth(),
     // new Date().getDate()
   })
+
+  useEffect(() => {
+    localStorage.getItem('username')
+      ? setExercise({
+          ...exercise,
+          userid: localStorage.getItem('userid'),
+          username: localStorage.getItem('username'),
+        })
+      : setExercise({ ...exercise })
+  }, [])
 
   // const [user, setUser] = useState('irah')
   const [rep, setRep] = useState(0)
