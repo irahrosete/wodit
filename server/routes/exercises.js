@@ -8,6 +8,7 @@ const exercisesRouter = express.Router()
 
 exercisesRouter.route('/').get(exercises.getAll)
 exercisesRouter.route('/query').get(exercises.getByDateAndUser)
+exercisesRouter.route('/get').get(exercises.getByUser)
 exercisesRouter.route('/add').post(exercises.add)
 exercisesRouter.route('/update/:id').post(exercises.update)
 

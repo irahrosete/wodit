@@ -18,6 +18,16 @@ const getByDateAndUser = (req, res) => {
     .catch((err) => res.status(400).json('Error ' + err))
 }
 
+// get exercises by date and user
+const getByUser = (req, res) => {
+  Exercise.find({
+    username: req.query.username,
+    userid: req.query.userid,
+  })
+    .then((exercises) => res.json(exercises))
+    .catch((err) => res.status(400).json('Error ' + err))
+}
+
 // add an exercise
 const add = (req, res) => {
   const userid = req.body.userid
@@ -54,4 +64,4 @@ const update = (req, res) => {
     .catch((err) => res.status(400).json('Error ' + err))
 }
 
-export default { getAll, getByDateAndUser, add, update }
+export default { getAll, getByDateAndUser, getByUser, add, update }
