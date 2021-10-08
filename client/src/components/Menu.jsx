@@ -18,6 +18,8 @@ const Menu = ({ isOpen, setIsOpen, username }) => {
         headers: { 'Content-Type': 'application/json' },
       })
       .then((res) => {
+        localStorage.removeItem('username')
+        localStorage.removeItem('token')
         console.log(res)
       })
       .catch((err) => console.log(err))

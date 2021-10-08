@@ -35,6 +35,8 @@ const LogIn = () => {
         console.log(data)
 
         if (data) {
+          localStorage.setItem('username', data.username)
+          localStorage.setItem('token', data.jwt)
           window.location.assign('/')
         }
       })
