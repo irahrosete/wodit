@@ -16,12 +16,13 @@ const getByDateAndUser = (req, res) => {
 
 // add an exercise
 const add = (req, res) => {
-  const user = req.body.user
+  const userid = req.body.userid
+  const username = req.body.username
   const activity = req.body.activity
   const rep = Number(req.body.rep)
   const date = req.body.date.toString().substring(0, 10)
 
-  const newExercise = new Exercise({ user, activity, rep, date })
+  const newExercise = new Exercise({ userid, username, activity, rep, date })
 
   newExercise
     .save()
@@ -35,7 +36,8 @@ const add = (req, res) => {
 const update = (req, res) => {
   Exercise.findById(req.params.id)
     .then((exercise) => {
-      exercise.user = req.body.user
+      exercise.userid = req.body.userid
+      exercise.username = req.body.username
       exercise.activity = req.body.activity
       exercise.rep = Number(req.body.rep)
       exercise.date = req.body.date.toString().substring(0, 10)

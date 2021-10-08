@@ -50,6 +50,10 @@ userSchema.statics.login = async function (email, password) {
   throw Error('Incorrect email and password combination')
 }
 
+userSchema.methods.comparePassword = function (password) {
+  return bcrypt.compareSync(password, this.password)
+}
+
 const User = mongoose.model('User', userSchema)
 
 export default User

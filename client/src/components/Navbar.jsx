@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 // import ENV_URL from '../config'
 import Menu from './Menu'
 import logo from '../img/wodit-logo.jpg'
-import { ReactComponent as User } from '../img/user.svg'
+import { ReactComponent as UserIcon } from '../img/user.svg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [user, setUser] = useState('irah')
+  const [username, setUsername] = useState('luigi')
 
   // useEffect(() => {
   //   axios
@@ -62,17 +62,19 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='flex items-center mr-8'>
-          <p className='font-body text-wodWhite tracking-widest mr-3'>{user}</p>
+          <p className='font-body text-wodWhite tracking-widest mr-3'>
+            {username}
+          </p>
           <button onClick={toggleMenu}>
-            <User fill='#ffffff' width='25' />
+            <UserIcon fill='#ffffff' width='25' />
           </button>
         </div>
       </nav>
       <Menu
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        user={user}
-        setUser={setUser}
+        username={username}
+        setUsername={setUsername}
       />
     </div>
   )

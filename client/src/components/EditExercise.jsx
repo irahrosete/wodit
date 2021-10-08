@@ -12,7 +12,10 @@ import ENV_URL from '../config'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    user: 'irah',
+    // userid: '',
+    userid: '6146ff4f82afcbc2dc7a0ac0', // prod
+    // userid: '61470621ba68ea89cc468c75', // dev
+    username: 'luigi',
     activity: 'push ups',
     rep: 0,
     date: new Date(),
@@ -43,11 +46,11 @@ const EditExercise = () => {
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
           .toISOString()
-          .substring(0, 10)}&user=${exercise.user}`
+          .substring(0, 10)}&userid=${exercise.userid}`
       )
       .then((res) => {
         const existingExercise = res.data[0]
-        console.log(res.data)
+        // console.log(res.data)
 
         if (existingExercise) {
           const newRep = rep + existingExercise.rep
@@ -84,7 +87,7 @@ const EditExercise = () => {
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
           .toISOString()
-          .substring(0, 10)}`
+          .substring(0, 10)}&userid=${exercise.userid}`
       )
       .then((res) => {
         const existingExercise = res.data[0]
@@ -151,7 +154,7 @@ const EditExercise = () => {
             ></Donut>
           </div>
           <div className='flex justify-between'>
-            {exercise.user ? (
+            {exercise.username ? (
               <>
                 <div className='ml-5 mt-5'>
                   <button className='btn bg-wodGray' onClick={handleRemove}>

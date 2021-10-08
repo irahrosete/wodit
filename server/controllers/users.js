@@ -7,11 +7,15 @@ import jwt from 'jsonwebtoken'
 const signUpUser = (req, res) => {
   const { username, email, password } = req.body
   const user = User.create({ username, email, password })
-  const token = createToken(user)
-  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }) // cookie expects time in millisecond
 
   user
     .then((response) => {
+      const token = createToken({
+        userid: response._id,
+        username: response.username,
+      })
+      // cookie expects time in millisecond
+      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
       res.status(201).json({
         id: response.id,
         username: response.username,
@@ -33,13 +37,16 @@ const signUpUser = (req, res) => {
 // authenticate existing user
 const logInUser = (req, res) => {
   const { email, password } = req.body
-
   const user = User.login(email, password)
-  const token = createToken(user)
-  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }) // cookie expects time in millisecond, jwt expects time in seconds
 
   user
     .then((response) => {
+      const token = createToken({
+        userid: response._id,
+        username: response.username,
+      })
+      // cookie expects time in millisecond, jwt expects time in seconds
+      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
       res.status(200).json({
         id: response.id,
         username: response.username,
@@ -72,15 +79,13 @@ const getUser = (req, res) => {
   if (!claim) {
     return res.status(401).json('Unauthenticated user')
   }
-  const user = User.findOne({ _id: claim._id })
+  const user = User.findOne({ _id: claim.userid })
   user
     .then((response) => {
-      // res.status(200).json(response)
+      res.status(200).json(response)
       console.log(response)
     })
     .catch((err) => res.status(400).json('Error ' + err))
-
-  // res.send(cookie)
 }
 
 // get user by id
