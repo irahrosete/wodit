@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import ENV_URL from '../config'
 
-const Menu = ({ isOpen, setIsOpen, username }) => {
+const Menu = ({ isOpen, setIsOpen, username, setUsername }) => {
   const handleClick = () => {
     setIsOpen(!isOpen)
   }
@@ -20,6 +20,7 @@ const Menu = ({ isOpen, setIsOpen, username }) => {
       .then((res) => {
         localStorage.removeItem('username')
         localStorage.removeItem('token')
+        setUsername('')
         console.log(res)
       })
       .catch((err) => console.log(err))
