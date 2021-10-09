@@ -11,20 +11,15 @@ const signUpUser = (req, res) => {
   user
     .then((response) => {
       const token = createToken({
-        userid: response._id,
+        id: response._id,
         username: response.username,
       })
       // cookie expects time in millisecond
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+      // res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
       res.status(201).json({
         id: response.id,
         username: response.username,
-        email: response.email,
-      })
-      console.log({
-        id: response.id,
-        username: response.username,
-        email: response.email,
+        jwt: token,
       })
     })
     .catch((err) => {
@@ -42,20 +37,15 @@ const logInUser = (req, res) => {
   user
     .then((response) => {
       const token = createToken({
-        userid: response._id,
+        id: response._id,
         username: response.username,
       })
       // cookie expects time in millisecond, jwt expects time in seconds
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+      // res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
       res.status(200).json({
         id: response.id,
         username: response.username,
-        email: response.email,
-      })
-      console.log({
-        id: response.id,
-        username: response.username,
-        email: response.email,
+        jwt: token,
       })
     })
     .catch((err) => {
@@ -63,12 +53,6 @@ const logInUser = (req, res) => {
       res.status(400).json({ errors })
       console.log(errors)
     })
-}
-
-// log current user out
-const logOutUser = (req, res) => {
-  res.cookie('jwt', '', { httpOnly: true, maxAge: 1 }) // replace cookie with a blank jwt
-  res.status(200).json('')
 }
 
 // get logged in user
@@ -101,7 +85,6 @@ const getById = (req, res) => {
 export default {
   signUpUser,
   logInUser,
-  logOutUser,
   getUser,
   getById,
 }

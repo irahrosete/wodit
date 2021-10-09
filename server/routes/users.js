@@ -5,7 +5,6 @@ const usersRouter = express.Router()
 
 usersRouter.route('/signup').post(users.signUpUser)
 usersRouter.route('/login').post(users.logInUser)
-usersRouter.route('/logout').get(users.logOutUser)
 usersRouter.route('/user').get(users.getUser)
 usersRouter.route('/:id').get(users.getById)
 

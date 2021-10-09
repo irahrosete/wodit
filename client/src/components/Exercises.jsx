@@ -6,16 +6,26 @@ import ENV_URL from '../config'
 
 const Exercises = ({ component: Component, ...rest }) => {
   const [exercises, setExercises] = useState([])
+  const user = {
+    userid: localStorage.getItem('userid') || '',
+    username: localStorage.getItem('username') || '',
+  }
+  console.log(user)
+  // console.log(exercises)
 
-  // update to filter for current user and protect page
   useEffect(() => {
-    axios
-      .get(`${ENV_URL}/api/exercises/`, { withCredentials: true })
-      .then((res) => {
-        setExercises(res.data)
-      })
-      .catch((err) => console.log(err))
-  }, [])
+    user.username
+      ? axios
+          .get(
+            `${ENV_URL}/api/exercises/get?userid=${user.userid}&username=${user.username}`
+          )
+          .then((res) => {
+            console.log(res)
+            setExercises(res.data)
+          })
+          .catch((err) => console.log(err))
+      : window.location.assign('/login')
+  }, [user.userid, user.username])
 
   return (
     <div className='mb-24 pt-16'>

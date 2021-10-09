@@ -9,7 +9,15 @@ import { ReactComponent as UserIcon } from '../img/user.svg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [username, setUsername] = useState('luigi')
+  const [username, setUsername] = useState('')
+
+  useEffect(() => {
+    localStorage.getItem('username')
+      ? setUsername(localStorage.getItem('username'))
+      : setUsername('')
+  }, [])
+
+  // setUsername(JSON.parse(localStorage.getItem('username')))
 
   // useEffect(() => {
   //   axios

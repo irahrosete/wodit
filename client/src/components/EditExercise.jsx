@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Donut } from 'react-dial-knob'
 import axios from 'axios'
@@ -12,10 +12,10 @@ import ENV_URL from '../config'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
-    // userid: '',
-    userid: '6146ff4f82afcbc2dc7a0ac0', // prod
+    userid: '',
+    // userid: '6146ff4f82afcbc2dc7a0ac0', // prod
     // userid: '61470621ba68ea89cc468c75', // dev
-    username: 'luigi',
+    username: '',
     activity: 'push ups',
     rep: 0,
     date: new Date(),
@@ -24,7 +24,17 @@ const EditExercise = () => {
     // new Date().getDate()
   })
 
-  // const [user, setUser] = useState('irah')
+  useEffect(() => {
+    localStorage.getItem('username')
+      ? setExercise({
+          ...exercise,
+          userid: localStorage.getItem('userid'),
+          username: localStorage.getItem('username'),
+        })
+      : setExercise({ ...exercise })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const [rep, setRep] = useState(0)
   const [existingRep, setExistingRep] = useState(0)
   const [removeRep, setRemoveRep] = useState(0)
@@ -46,11 +56,13 @@ const EditExercise = () => {
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
           .toISOString()
-          .substring(0, 10)}&userid=${exercise.userid}`
+          .substring(0, 10)}&userid=${exercise.userid}&username=${
+          exercise.username
+        }`
       )
       .then((res) => {
         const existingExercise = res.data[0]
-        // console.log(res.data)
+        console.log(res.data)
 
         if (existingExercise) {
           const newRep = rep + existingExercise.rep
@@ -81,13 +93,13 @@ const EditExercise = () => {
       setRemoveAlert(false)
     }, 3000)
 
-    // console.log(exercise.date.toISOString().substring(0, 10))
-
     axios
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
           .toISOString()
-          .substring(0, 10)}&userid=${exercise.userid}`
+          .substring(0, 10)}&userid=${exercise.userid}&username=${
+          exercise.username
+        }`
       )
       .then((res) => {
         const existingExercise = res.data[0]
@@ -101,7 +113,7 @@ const EditExercise = () => {
             })
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
-          // console.log({ ...existingExercise, rep: newRep })
+          console.log({ ...existingExercise, rep: newRep })
         } else {
           // console.log('existing exercise for this date is less')
           setExistingRep(existingExercise.rep)

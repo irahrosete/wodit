@@ -39,6 +39,9 @@ const SignUp = () => {
         const data = response.data
 
         if (data.username) {
+          localStorage.setItem('username', data.username)
+          localStorage.setItem('token', data.jwt)
+          localStorage.setItem('userid', data.id)
           window.location.assign('/')
         }
       })

@@ -32,9 +32,11 @@ const LogIn = () => {
       })
       .then((response) => {
         const data = response.data
-        console.log(data)
 
         if (data) {
+          localStorage.setItem('username', data.username)
+          localStorage.setItem('token', data.jwt)
+          localStorage.setItem('userid', data.id)
           window.location.assign('/')
         }
       })
