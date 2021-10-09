@@ -10,7 +10,7 @@ module.exports = {
       wodGray: '#f6f6f6',
       wodDarkGray: '#d6d6d6',
       wodYellow: '#fff8b6',
-      wodDarkYellow: '#fff48f',
+      wodIvory: '#fffdeb',
       wodBlue: '#6C90C6',
       wodRed: '#E25050',
       wodAlert: '#e0ebf5',

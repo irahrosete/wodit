@@ -13,8 +13,6 @@ import ENV_URL from '../config'
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
     userid: '',
-    // userid: '6146ff4f82afcbc2dc7a0ac0', // prod
-    // userid: '61470621ba68ea89cc468c75', // dev
     username: '',
     activity: 'push ups',
     rep: 0,
@@ -50,8 +48,6 @@ const EditExercise = () => {
       setAddAlert(false)
     }, 3000)
 
-    // console.log(exercise.date.toISOString().substring(0, 10))
-
     axios
       .get(
         `${ENV_URL}/api/exercises/query?date=${exercise.date
@@ -62,7 +58,6 @@ const EditExercise = () => {
       )
       .then((res) => {
         const existingExercise = res.data[0]
-        console.log(res.data)
 
         if (existingExercise) {
           const newRep = rep + existingExercise.rep
@@ -73,9 +68,7 @@ const EditExercise = () => {
             })
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
-          // console.log({ ...existingExercise, rep: newRep })
         } else {
-          // console.log('no exercise for this date')
           axios
             .post(`${ENV_URL}/api/exercises/add`, { ...exercise, rep })
             .then((res) => console.log(res.data))
@@ -103,7 +96,6 @@ const EditExercise = () => {
       )
       .then((res) => {
         const existingExercise = res.data[0] || 0
-        console.log(existingExercise)
 
         if (existingExercise.rep >= rep) {
           const newRep = existingExercise.rep - rep
@@ -114,16 +106,13 @@ const EditExercise = () => {
             })
             .then((res) => console.log(res.data))
             .catch((err) => console.log(err))
-          console.log({ ...existingExercise, rep: newRep })
         } else {
-          // console.log('existing exercise for this date is less')
           setExistingRep(existingExercise.rep)
           setRemoveRep(rep)
         }
       })
       .catch((err) => console.log(err))
   }
-  // console.log(existingRep, removeRep)
 
   return (
     <div className='mb-24 pt-16'>

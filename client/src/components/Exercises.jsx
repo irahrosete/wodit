@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import ENV_URL from '../config'
@@ -10,8 +9,6 @@ const Exercises = ({ component: Component, ...rest }) => {
     userid: localStorage.getItem('userid') || '',
     username: localStorage.getItem('username') || '',
   }
-  console.log(user)
-  // console.log(exercises)
 
   useEffect(() => {
     user.username
@@ -20,7 +17,6 @@ const Exercises = ({ component: Component, ...rest }) => {
             `${ENV_URL}/api/exercises/get?userid=${user.userid}&username=${user.username}`
           )
           .then((res) => {
-            console.log(res)
             setExercises(res.data)
           })
           .catch((err) => console.log(err))

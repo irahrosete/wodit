@@ -1,6 +1,6 @@
 import User from '../models/user.js'
 import { handleErrors } from '../utils/handle-errors.js'
-import { createToken, maxAge } from '../utils/create-token.js'
+import { createToken } from '../utils/create-token.js'
 import jwt from 'jsonwebtoken'
 
 // create new user

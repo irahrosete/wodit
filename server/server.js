@@ -40,7 +40,6 @@ app.use(cookieParser())
 mongoose.connect(process.env.MONGODB_URL || MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  // useCreateIndex: true,
 })
 
 const connection = mongoose.connection

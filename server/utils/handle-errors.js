@@ -1,6 +1,6 @@
 export const handleErrors = (err) => {
   let errors = { username: '', email: '', password: '' }
-  console.log(err.message, err.code)
+  // console.log(err.message, err.code)
 
   // handle duplicate email
   if (err.code === 11000) {

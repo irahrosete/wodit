@@ -42,7 +42,7 @@ const LogIn = () => {
         }
       })
       .catch((err) => {
-        console.log(err.response.data.errors)
+        // console.log(err.response.data.errors)
         const data = err.response.data
         if (data.errors) {
           setError({

@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-// import axios from 'axios'
 
-// import ENV_URL from '../config'
 import Menu from './Menu'
 import logo from '../img/wodit-logo.jpg'
 import { ReactComponent as UserIcon } from '../img/user.svg'
@@ -16,22 +14,6 @@ const Navbar = () => {
       ? setUsername(localStorage.getItem('username'))
       : setUsername('')
   }, [])
-
-  // setUsername(JSON.parse(localStorage.getItem('username')))
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${ENV_URL}/api/users/user`, {
-  //       withCredentials: true,
-  //       credentials: 'include',
-  //       headers: { 'Content-Type': 'application/json' },
-  //     })
-  //     .then((res) => {
-  //       // setUser(res.data)
-  //       console.log(res)
-  //     })
-  //     .catch((err) => console.log(err))
-  // }, [])
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
