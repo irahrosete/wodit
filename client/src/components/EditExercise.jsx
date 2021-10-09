@@ -32,6 +32,7 @@ const EditExercise = () => {
           username: localStorage.getItem('username'),
         })
       : setExercise({ ...exercise })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const [rep, setRep] = useState(0)
