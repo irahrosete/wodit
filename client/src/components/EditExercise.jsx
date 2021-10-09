@@ -102,7 +102,8 @@ const EditExercise = () => {
         }`
       )
       .then((res) => {
-        const existingExercise = res.data[0]
+        const existingExercise = res.data[0] || 0
+        console.log(existingExercise)
 
         if (existingExercise.rep >= rep) {
           const newRep = existingExercise.rep - rep

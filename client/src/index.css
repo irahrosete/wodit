@@ -28,10 +28,19 @@
   width: 350px;
 }
 
+.boxLog {
+  @apply border border-wodDarkGray bg-wodGray rounded mx-auto;
+  width: 350px;
+}
+
 .boxAlert {
   @apply flex p-1 my-5 mx-8 justify-center bg-wodYellow border rounded border-wodDarkGray absolute inset-x-0 z-10;
 }
 
 .textWod {
   @apply font-body text-wodBlack;
+}
+
+.textWodLight {
+  @apply font-body text-wodBlackLight;
 }

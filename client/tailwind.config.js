@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     colors: {
       wodBlack: '#323232',
+      wodBlackLight: '#696969',
       wodWhite: '#ffffff',
       wodGray: '#f6f6f6',
       wodDarkGray: '#d6d6d6',
