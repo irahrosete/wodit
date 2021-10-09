@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import ENV_URL from '../config'
 
@@ -59,12 +60,16 @@ const LogIn = () => {
         <p className='p-1 textWodLight'>Log in to continue</p>
       </div>
       <div className='boxLog mt-8'>
-        {/* <div className='mb-24 pt-16'> */}
-        <form className='mx-10 my-5' onSubmit={handleSubmit}>
+        <form className='mx-8 my-5' onSubmit={handleSubmit}>
           <div className='flex flex-col'>
-            <label className='textWod' htmlFor='email'>
-              Email
-            </label>
+            <div className='flex justify-between items-baseline'>
+              <label className='textWod' htmlFor='email'>
+                Email
+              </label>
+              <Link to='/signup'>
+                <p className='textWodBlue text-xs'>Don't have an account?</p>
+              </Link>
+            </div>
             <input
               className='rounded border-wodDarkGray textWod w-full'
               type='text'
@@ -73,11 +78,16 @@ const LogIn = () => {
               onChange={handleChange}
             />
           </div>
-          <div className='textWodLight'>{error.email}</div>
+          <div className='textWodAlert text-xs tracking-wide'>
+            {error.email}
+          </div>
           <div className='flex flex-col pt-2'>
-            <label className='textWod' htmlFor='password'>
-              Password
-            </label>
+            <div className='flex justify-between items-baseline'>
+              <label className='textWod' htmlFor='password'>
+                Password
+              </label>
+              <p className='textWodBlue text-xs'>Forgot password?</p>
+            </div>
             <input
               className='rounded border-wodDarkGray textWod w-full'
               type='password'

@@ -44,3 +44,11 @@
 .textWodLight {
   @apply font-body text-wodBlackLight;
 }
+
+.textWodBlue {
+  @apply font-body text-wodBlue tracking-wide;
+}
+
+.textWodAlert {
+  @apply font-body text-wodRed tracking-wide;
+}
