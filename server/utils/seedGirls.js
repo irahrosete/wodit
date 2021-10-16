@@ -1,6 +1,5 @@
 export const data = [
   {
-    id: '1',
     name: 'Amanda',
     sub: '9-7-5 for time',
     desc1: 'muscle ups',
@@ -8,9 +7,9 @@ export const data = [
     desc3: '',
     desc4: '',
     desc5: '',
+    target: '14 mins',
   },
   {
-    id: '2',
     name: 'Angie',
     sub: 'for time',
     desc1: '100 pull ups',
@@ -18,9 +17,9 @@ export const data = [
     desc3: '100 sit ups',
     desc4: '100 squats',
     desc5: '',
+    target: '28 mins',
   },
   {
-    id: '3',
     name: 'Annie',
     sub: '50-40-30-20-10 for time',
     desc1: 'double unders',
@@ -28,15 +27,16 @@ export const data = [
     desc3: '',
     desc4: '',
     desc5: '',
+    target: '11 mins',
   },
   {
-    id: '4',
-    name: '',
-    sub: '',
-    desc1: '',
-    desc2: '',
-    desc3: '',
-    desc4: '',
-    desc5: '',
+    name: 'Barbara',
+    sub: '5 rounds for time',
+    desc1: '20 pulls ups',
+    desc2: '30 push ups',
+    desc3: '40 sit ups',
+    desc4: '50 air squats',
+    desc5: '3 mins rest',
+    target: '8 mins per round',
   },
 ]
