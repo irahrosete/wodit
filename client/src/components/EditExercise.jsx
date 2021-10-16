@@ -153,7 +153,7 @@ const EditExercise = () => {
               }}
               onValueChange={setRep}
               ariaLabelledBy={'my-label'}
-            ></Donut>
+            />
           </div>
           <div className='flex justify-between'>
             {exercise.username ? (

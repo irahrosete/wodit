@@ -25,7 +25,7 @@ const Girls = () => {
   return (
     <div className='flex items-center justify-center flex-col pt-24 mb-24'>
       <div className='flex flex-col items-center'>
-        <h2 className='textWod text-2xl my-3 uppercase '>The Girls</h2>
+        <h2 className='textWod text-2xl mb-6 uppercase '>The Girls</h2>
       </div>
       {girls.map((item) => {
         return (
