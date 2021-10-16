@@ -65,6 +65,7 @@ const Girls = () => {
                 <p className='px-14'>{item.desc3}</p>
                 <p className='px-14'>{item.desc4}</p>
                 <p className='px-14'>{item.desc5}</p>
+                <p className='px-14'>{item.desc6}</p>
                 {item.target ? (
                   <p className='uppercase text-sm pt-3 px-8 text-right'>
                     target: {item.target}

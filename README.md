@@ -55,6 +55,7 @@ This app is for anyone who wishes to form a new habit, follow a workout, and kee
 - React Date Picker
 - React Dial Knob
 - React Router DOM
+- React Icons
 - Tailwind CSS
 - Axios
 - Nodemon
