@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const girlSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    sub: { type: String, required: true },
+    sub: { type: String },
     desc1: { type: String },
     desc2: { type: String },
     desc3: { type: String },

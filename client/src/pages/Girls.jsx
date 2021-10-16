@@ -23,7 +23,7 @@ const Girls = () => {
   }, [])
 
   return (
-    <div className='flex items-center justify-center flex-col pt-24'>
+    <div className='flex items-center justify-center flex-col pt-24 mb-24'>
       <div className='flex flex-col items-center'>
         <h2 className='textWod text-2xl my-3 uppercase '>The Girls</h2>
       </div>
@@ -34,7 +34,7 @@ const Girls = () => {
             onClick={() => {
               toggle(item._id)
             }}
-            key={item.id}
+            key={item._id}
           >
             {isOpen === item._id ? (
               <div className='flex justify-between items-center boxWod bg-wodYellow my-1'>

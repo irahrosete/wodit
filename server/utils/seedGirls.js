@@ -1,5 +1,6 @@
 export const data = [
   {
+    // 1
     name: 'Amanda',
     sub: '9-7-5 for time',
     desc1: 'muscle ups',
@@ -10,6 +11,7 @@ export const data = [
     target: '14 mins',
   },
   {
+    // 2
     name: 'Angie',
     sub: 'for time',
     desc1: '100 pull ups',
@@ -20,6 +22,7 @@ export const data = [
     target: '28 mins',
   },
   {
+    // 3
     name: 'Annie',
     sub: '50-40-30-20-10 for time',
     desc1: 'double unders',
@@ -30,6 +33,7 @@ export const data = [
     target: '11 mins',
   },
   {
+    // 4
     name: 'Barbara',
     sub: '5 rounds for time',
     desc1: '20 pulls ups',
@@ -38,5 +42,335 @@ export const data = [
     desc4: '50 air squats',
     desc5: '3 mins rest',
     target: '8 mins per round',
+  },
+  {
+    // 5
+    name: 'Chelsea',
+    sub: 'emom for 30 mins',
+    desc1: '5 pull ups',
+    desc2: '10 push ups',
+    desc3: '15 air squats',
+    desc4: '',
+    desc5: '',
+    target: '20 rounds',
+  },
+  {
+    // 6
+    name: 'Cindy',
+    sub: 'amrap in 20 minutes',
+    desc1: '5 pull ups',
+    desc2: '10 push ups',
+    desc3: '15 air squats',
+    desc4: '',
+    desc5: '',
+    target: '12 rounds',
+  },
+  {
+    // 7
+    name: 'Diane',
+    sub: '21-15-9 for time',
+    desc1: 'deadlifts 225/155 lb',
+    desc2: 'handstand push ups',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '10 mins',
+  },
+  {
+    // 8
+    name: 'Elizabeth',
+    sub: '21-15-9 for time',
+    desc1: 'squat cleans 135/95 lb',
+    desc2: 'ring dips',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '14 mins',
+  },
+  {
+    // 9
+    name: 'Eva',
+    sub: '5 rounds for time',
+    desc1: '800m run',
+    desc2: '30 KB swings, 2 poods',
+    desc3: '30 pull ups',
+    desc4: '',
+    desc5: '',
+    target: '70 mins',
+  },
+  {
+    // 10
+    name: 'Fran',
+    sub: '21-15-9 for time',
+    desc1: 'thrusters 95/75 lb',
+    desc2: 'pull ups',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '9 mins',
+  },
+  {
+    // 11
+    name: 'Grace',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 12
+    name: 'Helen',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 13
+    name: 'Isabel',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 14
+    name: 'Jackie',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 15
+    name: 'Karen',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 16
+    name: 'Kelly',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 17
+    name: 'Linda',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 18
+    name: 'Lynne',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 19
+    name: 'Mary',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 20
+    name: 'Nancy',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 21
+    name: 'Nicole',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 22
+    name: 'Candy',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 23
+    name: 'Gwen',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 24
+    name: 'Hope',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 25
+    name: 'Maggie',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 26
+    name: 'Marguerita',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 27
+    name: 'Megan',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 28
+    name: 'Grettel',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 29
+    name: 'Ingrid',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 30
+    name: 'Barbara Ann',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 31
+    name: 'Lyla',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 32
+    name: 'Ellen',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 33
+    name: 'Andi',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
+  },
+  {
+    // 34
+    name: 'Lane',
+    sub: '',
+    desc1: '',
+    desc2: '',
+    desc3: '',
+    desc4: '',
+    desc5: '',
+    target: '',
   },
 ]
