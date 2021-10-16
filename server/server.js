@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser'
 import MONGODB_URL from './config.js'
 import exercisesRouter from './routes/exercises.js'
 import usersRouter from './routes/users.js'
+import girlsRouter from './routes/girls.js'
 
 dotenv.config()
 
@@ -54,6 +55,7 @@ app.get('/', (req, res) => {
 // routes
 app.use('/api/exercises', exercisesRouter)
 app.use('/api/users', usersRouter)
+app.use('/api/girls', girlsRouter)
 
 // app.get('/set-cookies', (req, res) => {
 //   // res.setHeader('Set-Cookie', 'newUser=true')
