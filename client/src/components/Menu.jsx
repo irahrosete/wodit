@@ -22,6 +22,9 @@ const Menu = ({ isOpen, setIsOpen, username, setUsername }) => {
           <Link to='/girls' onClick={handleClick}>
             <p className='menu text-wodWhite'>The Girls</p>
           </Link>
+          <Link to='/heroes' onClick={handleClick}>
+            <p className='menu text-wodWhite'>The Heroes</p>
+          </Link>
           {username && (
             <Link to='/' onClick={handleLogOut}>
               <p className='menu text-wodYellow'>Sign out</p>

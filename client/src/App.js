@@ -9,7 +9,8 @@ import Error from './pages/Error'
 import Wods from './components/Wods'
 import Exercises from './components/Exercises'
 import Girls from './pages/Girls'
-import Footer from './components/Footer.jsx'
+import Footer from './components/Footer'
+import Heroes from './pages/Heroes'
 
 const App = () => {
   return (
@@ -34,6 +35,9 @@ const App = () => {
           </Route>
           <Route path='/girls'>
             <Girls />
+          </Route>
+          <Route path='/heroes'>
+            <Heroes />
           </Route>
           <Route path='*'>
             <Error />
