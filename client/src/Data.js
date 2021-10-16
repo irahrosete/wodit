@@ -8,6 +8,7 @@ export const data = [
     desc3: '',
     desc4: '',
     desc5: '',
+    target: '14 mins',
   },
   {
     id: '2',
@@ -18,6 +19,7 @@ export const data = [
     desc3: '100 sit ups',
     desc4: '100 squats',
     desc5: '',
+    target: '',
   },
   {
     id: '3',
@@ -28,6 +30,7 @@ export const data = [
     desc3: '',
     desc4: '',
     desc5: '',
+    target: '',
   },
   {
     id: '4',
@@ -38,5 +41,6 @@ export const data = [
     desc3: '',
     desc4: '',
     desc5: '',
+    target: '',
   },
 ]
