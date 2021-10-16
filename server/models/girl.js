@@ -9,6 +9,7 @@ const girlSchema = new mongoose.Schema(
     desc3: { type: String },
     desc4: { type: String },
     desc5: { type: String },
+    desc6: { type: String },
     target: { type: String },
   },
   {
