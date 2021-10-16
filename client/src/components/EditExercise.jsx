@@ -136,7 +136,7 @@ const EditExercise = () => {
       )}
 
       <div className='flex justify-center'>
-        <h3 className='textWod text-2xl my-6'>PUSH UPS</h3>
+        <h3 className='textWod uppercase text-2xl my-6'>Push ups</h3>
       </div>
       <div className='flex items-center justify-center'>
         <div className='box'>

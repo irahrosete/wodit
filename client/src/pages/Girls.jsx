@@ -8,24 +8,30 @@ import ENV_URL from '../config'
 const Girls = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [girls, setGirls] = useState([])
+  const user = {
+    userid: localStorage.getItem('userid') || '',
+    username: localStorage.getItem('username') || '',
+  }
 
   const toggle = (id) => {
     isOpen === id ? setIsOpen(null) : setIsOpen(id)
   }
 
   useEffect(() => {
-    axios
-      .get(`${ENV_URL}/api/girls/`)
-      .then((res) => {
-        setGirls(res.data)
-      })
-      .catch((err) => console.log(err))
-  }, [])
+    user.username
+      ? axios
+          .get(`${ENV_URL}/api/girls/`)
+          .then((res) => {
+            setGirls(res.data)
+          })
+          .catch((err) => console.log(err))
+      : window.location.assign('/login')
+  }, [user.userid, user.username])
 
   return (
     <div className='flex items-center justify-center flex-col pt-24 mb-24'>
       <div className='flex flex-col items-center'>
-        <h2 className='textWod text-2xl mb-6 uppercase '>The Girls</h2>
+        <h2 className='textWod text-2xl mb-6 uppercase'>The Girls</h2>
       </div>
       {girls.map((item) => {
         return (
