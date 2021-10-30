@@ -18,16 +18,19 @@ const Menu = ({ isOpen, setIsOpen, username, setUsername }) => {
   return (
     <div className='fixed inset-x-0 mt-16 z-10'>
       {isOpen && (
-        <div className='bg-wodBlack bg-opacity-80 py-3'>
+        <div className='bg-wodBlack bg-opacity-90 py-3'>
           <Link to='/girls' onClick={handleClick}>
-            <p className='menu text-wodWhite'>The Girls</p>
+            <p className='menu uppercase text-wodWhite'>About</p>
+          </Link>
+          <Link to='/girls' onClick={handleClick}>
+            <p className='menu uppercase text-wodWhite'>The Girls</p>
           </Link>
           <Link to='/heroes' onClick={handleClick}>
-            <p className='menu text-wodWhite'>The Heroes</p>
+            <p className='menu uppercase text-wodWhite'>The Heroes</p>
           </Link>
           {username && (
             <Link to='/' onClick={handleLogOut}>
-              <p className='menu text-wodYellow'>Sign out</p>
+              <p className='menu uppercase text-wodYellow'>Sign out</p>
             </Link>
           )}
         </div>

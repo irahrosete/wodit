@@ -231,7 +231,7 @@ export const data = [
     // 20
     name: 'Nancy',
     sub: '5 rounds for time',
-    desc1: '400m rum',
+    desc1: '400m run',
     desc2: '15 OH squats 95/65 lb',
     desc3: '',
     desc4: '',
