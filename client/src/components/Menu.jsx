@@ -19,7 +19,7 @@ const Menu = ({ isOpen, setIsOpen, username, setUsername }) => {
     <div className='fixed inset-x-0 mt-16 z-10'>
       {isOpen && (
         <div className='bg-wodBlack bg-opacity-90 py-3'>
-          <Link to='/girls' onClick={handleClick}>
+          <Link to='/about' onClick={handleClick}>
             <p className='menu uppercase text-wodWhite'>About</p>
           </Link>
           <Link to='/girls' onClick={handleClick}>

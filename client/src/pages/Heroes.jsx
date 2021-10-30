@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import { FiPlus, FiMinus } from 'react-icons/fi'
+import { FaInfoCircle } from 'react-icons/fa'
 
 import ENV_URL from '../config'
 
 const Heroes = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [heroes, setHeroes] = useState([])
+  const [isInfoOpen, setIsInfoOpen] = useState(false)
+
   const user = {
     userid: localStorage.getItem('userid') || '',
     username: localStorage.getItem('username') || '',
@@ -15,6 +18,10 @@ const Heroes = () => {
 
   const toggle = (id) => {
     isOpen === id ? setIsOpen(null) : setIsOpen(id)
+  }
+
+  const toggleInfo = () => {
+    isInfoOpen === false ? setIsInfoOpen(true) : setIsInfoOpen(false)
   }
 
   useEffect(() => {
@@ -30,9 +37,33 @@ const Heroes = () => {
 
   return (
     <div className='flex items-center justify-center flex-col pt-24 mb-24'>
-      <div className='flex flex-col items-center'>
+      <div className='flex '>
         <h2 className='textWod text-2xl mb-6'>CrossFit HERO WODs</h2>
+        <span
+          className='pl-2 text-wodBlack'
+          onClick={() => {
+            toggleInfo()
+          }}
+        >
+          <FaInfoCircle />
+        </span>
       </div>
+      {isInfoOpen && (
+        <div>
+          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+            The HERO WoDs are some of the most intense and brutal workouts in
+            CrossFit. They are more than just workouts. They are designed as a
+            way to honour the brave military, fire and police men and women who
+            have given their lives in line of duty.
+          </h3>
+          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+            Each Hero WoD (workout of the day) test your strength and
+            conditioning in ways that few other WoDs do. They often leave you in
+            pain, trying to catch your breath as you lay on the gym floor in
+            agony.
+          </h3>
+        </div>
+      )}
       {heroes.map((item) => {
         return (
           <div

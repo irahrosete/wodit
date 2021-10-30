@@ -10,6 +10,7 @@ const Girls = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isInfoOpen, setIsInfoOpen] = useState(false)
   const [girls, setGirls] = useState([])
+
   const user = {
     userid: localStorage.getItem('userid') || '',
     username: localStorage.getItem('username') || '',
