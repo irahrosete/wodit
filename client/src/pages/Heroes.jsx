@@ -111,9 +111,9 @@ const Heroes = () => {
                 <p className='px-14'>{item.desc18}</p>
                 <p className='px-14'>{item.desc19}</p>
                 <p className='px-14'>{item.desc20}</p>
-                {item.note ? (
+                {item.hero ? (
                   <p className='uppercase text-sm pt-3 px-8 text-right'>
-                    in memory of {item.note}
+                    in honour of {item.hero}
                   </p>
                 ) : null}
               </div>
