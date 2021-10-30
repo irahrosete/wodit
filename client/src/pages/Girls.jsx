@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import { FiPlus, FiMinus } from 'react-icons/fi'
+import { FaInfoCircle } from 'react-icons/fa'
 
 import ENV_URL from '../config'
 
 const Girls = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isInfoOpen, setIsInfoOpen] = useState(false)
   const [girls, setGirls] = useState([])
+
   const user = {
     userid: localStorage.getItem('userid') || '',
     username: localStorage.getItem('username') || '',
@@ -15,6 +18,10 @@ const Girls = () => {
 
   const toggle = (id) => {
     isOpen === id ? setIsOpen(null) : setIsOpen(id)
+  }
+
+  const toggleInfo = () => {
+    isInfoOpen === false ? setIsInfoOpen(true) : setIsInfoOpen(false)
   }
 
   useEffect(() => {
@@ -30,9 +37,34 @@ const Girls = () => {
 
   return (
     <div className='flex items-center justify-center flex-col pt-24 mb-24'>
-      <div className='flex flex-col items-center'>
-        <h2 className='textWod text-2xl mb-6 uppercase'>The Girls</h2>
+      <div className='flex'>
+        <h2 className='textWod text-2xl mb-6'>CrossFit GIRL WoDs</h2>
+        <span
+          className='pl-2 text-wodBlack'
+          onClick={() => {
+            toggleInfo()
+          }}
+        >
+          <FaInfoCircle />
+        </span>
       </div>
+      {isInfoOpen && (
+        <div>
+          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+            The GIRL WoDs are benchmark workouts in CrossFit. They are designed
+            to take a snapshot of your current fitness level. Each Girl WoD
+            (workout of the day) is designed to test your fitness in different
+            ways: cardio, power, speed, strength, flexibilty.
+          </h3>
+          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+            A woman’s identity in CrossFit is rooted in the physically demanding
+            and the ferocious power of female athletes, just as if a storm came
+            at your way full force and overpowered everything in its way.
+            Anything that leaves you flat on your back, looking up at the sky
+            asking, ‘What just happened to me?’ deserves a female’s name.
+          </h3>
+        </div>
+      )}
       {girls.map((item) => {
         return (
           <div
