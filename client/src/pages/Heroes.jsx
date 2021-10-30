@@ -53,8 +53,8 @@ const Heroes = () => {
           <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
             The HERO WoDs are some of the most intense and brutal workouts in
             CrossFit. They are more than just workouts. They are designed as a
-            way to honour the brave military, fire and police men and women who
-            have given their lives in line of duty.
+            way to honour the brave military, navy, fire and police men and
+            women who have given their lives in line of duty.
           </h3>
           <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
             Each Hero WoD (workout of the day) test your strength and
