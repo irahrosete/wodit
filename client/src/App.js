@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import EditExercise from './components/EditExercise'
+import About from './pages/About'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
 import Error from './pages/Error'
@@ -20,6 +21,9 @@ const App = () => {
         <Switch>
           <Route exact path='/'>
             <EditExercise />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
           <Route path='/login'>
             <LogIn />

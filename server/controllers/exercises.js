@@ -18,7 +18,7 @@ const getByDateAndUser = (req, res) => {
     .catch((err) => res.status(400).json('Error ' + err))
 }
 
-// get exercises by date and user
+// get exercises by user
 const getByUser = (req, res) => {
   Exercise.find({
     username: req.query.username,
