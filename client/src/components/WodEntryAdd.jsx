@@ -14,7 +14,7 @@ const WodEntryAdd = ({ title, description }) => {
         <h3 className='textWod uppercase text-2xl mb-3'>{title}</h3>
       </div>
       <div className='boxWod bg-wodGray'>
-        <form className='mx-5' onSubmit={handleSubmit}>
+        <form className='mx-3' onSubmit={handleSubmit}>
           <textarea
             className='textWod w-full resize-y rounded border border-wodDarkGray'
             placeholder='start here...'
@@ -22,8 +22,7 @@ const WodEntryAdd = ({ title, description }) => {
             onChange={handleChange}
           />
         </form>
-        <p className='px-5 py-2 textWod'>{description}</p>
-        <div className='ml-5 flex justify-evenly'>
+        <div className='flex justify-evenly'>
           <Link to='/wod'>
             <button className='btn bg-wodGray my-2'>cancel</button>
           </Link>

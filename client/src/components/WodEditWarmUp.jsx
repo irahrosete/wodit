@@ -9,8 +9,7 @@ const data = [
     userid: '',
     username: 'luigi',
     warmup: '',
-    workout:
-      'workout here lorem ipsum\r\nworkout here lorem ipsum\r\nworkout here lorem ipsum',
+    workout: 'workout here',
     date: '',
   },
 ]
