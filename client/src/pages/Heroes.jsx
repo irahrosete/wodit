@@ -45,18 +45,18 @@ const Heroes = () => {
             toggleInfo()
           }}
         >
-          <FaInfoCircle />
+          <FaInfoCircle className='cursor-pointer' />
         </span>
       </div>
       {isInfoOpen && (
-        <div>
-          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+        <div className='border border-wodDarkGray rounded mx-3 mb-4'>
+          <h3 className=' textWod tracking-wide text-sm pt-4 px-4'>
             The HERO WoDs are some of the most intense and brutal workouts in
             CrossFit. They are more than just workouts. They are designed as a
             way to honour the brave military, navy, fire and police men and
             women who have given their lives in line of duty.
           </h3>
-          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+          <h3 className=' textWod tracking-wide text-sm py-4 px-4'>
             Each Hero WoD (workout of the day) test your strength and
             conditioning in ways that few other WoDs do. They often leave you in
             pain, trying to catch your breath as you lay on the gym floor in
@@ -77,14 +77,14 @@ const Heroes = () => {
               <div className='flex justify-between items-center boxWod bg-wodYellow my-1'>
                 <h2 className='textWod text-lg px-4'>{item.name}</h2>
                 <span className='px-3'>
-                  <FiMinus />
+                  <FiMinus className='cursor-pointer' />
                 </span>
               </div>
             ) : (
               <div className='flex justify-between items-center boxWod bg-wodGray my-1'>
                 <h2 className='textWod text-lg px-4'>{item.name}</h2>
                 <span className='px-3'>
-                  <FiPlus />
+                  <FiPlus className='cursor-pointer' />
                 </span>
               </div>
             )}

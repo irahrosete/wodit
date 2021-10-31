@@ -13,6 +13,7 @@ module.exports = {
       wodIvory: '#fffdeb',
       wodBlue: '#6C90C6',
       wodRed: '#E25050',
+      wodGreen: '#39A388',
       wodAlert: '#e0ebf5',
     },
     extend: {

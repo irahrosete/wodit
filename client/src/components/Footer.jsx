@@ -8,7 +8,7 @@ import { ReactComponent as Bar } from '../img/bar.svg'
 const Footer = () => {
   return (
     <footer className='flex justify-evenly bg-wodGray fixed inset-x-0 bottom-0 py-2'>
-      <Link to='/wods'>
+      <Link to='/wod'>
         <Dumbbell width='60' />
       </Link>
       <Link to='/'>
