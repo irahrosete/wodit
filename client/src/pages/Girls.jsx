@@ -45,18 +45,18 @@ const Girls = () => {
             toggleInfo()
           }}
         >
-          <FaInfoCircle />
+          <FaInfoCircle className='cursor-pointer' />
         </span>
       </div>
       {isInfoOpen && (
-        <div>
-          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+        <div className='border border-wodDarkGray rounded mx-3 mb-4'>
+          <h3 className=' textWod tracking-wide text-sm pt-4 px-4'>
             The GIRL WoDs are benchmark workouts in CrossFit. They are designed
             to take a snapshot of your current fitness level. Each Girl WoD
             (workout of the day) is designed to test your fitness in different
             ways: cardio, power, speed, strength, flexibilty.
           </h3>
-          <h3 className=' textWod tracking-wide text-sm pb-3 px-9'>
+          <h3 className=' textWod tracking-wide text-sm py-4 px-4'>
             A woman’s identity in CrossFit is rooted in the physically demanding
             and the ferocious power of female athletes, just as if a storm came
             at your way full force and overpowered everything in its way.
@@ -78,14 +78,14 @@ const Girls = () => {
               <div className='flex justify-between items-center boxWod bg-wodYellow my-1'>
                 <h2 className='textWod text-lg px-4'>{item.name}</h2>
                 <span className='px-3'>
-                  <FiMinus />
+                  <FiMinus className='cursor-pointer' />
                 </span>
               </div>
             ) : (
               <div className='flex justify-between items-center boxWod bg-wodGray my-1'>
                 <h2 className='textWod text-lg px-4'>{item.name}</h2>
                 <span className='px-3'>
-                  <FiPlus />
+                  <FiPlus className='cursor-pointer' />
                 </span>
               </div>
             )}
