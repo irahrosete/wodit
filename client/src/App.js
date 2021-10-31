@@ -7,7 +7,11 @@ import About from './pages/About'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
 import Error from './pages/Error'
-import Wods from './components/Wods'
+import Wod from './components/Wod'
+import WodAddWarmUp from './components/WodAddWarmUp'
+import WodAddWorkOut from './components/WodAddWorkOut'
+import WodEditWarmUp from './components/WodEditWarmUp'
+import WodEditWorkOut from './components/WodEditWorkOut'
 import Exercises from './components/Exercises'
 import Girls from './pages/Girls'
 import Footer from './components/Footer'
@@ -31,8 +35,20 @@ const App = () => {
           <Route path='/signup'>
             <SignUp />
           </Route>
-          <Route path='/wods'>
-            <Wods />
+          <Route path='/wod'>
+            <Wod />
+          </Route>
+          <Route path='/addwarmup'>
+            <WodAddWarmUp />
+          </Route>
+          <Route path='/addworkout'>
+            <WodAddWorkOut />
+          </Route>
+          <Route path='/editwarmup'>
+            <WodEditWarmUp />
+          </Route>
+          <Route path='/editworkout'>
+            <WodEditWorkOut />
           </Route>
           <Route path='/exer'>
             <Exercises />

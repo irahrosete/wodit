@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import DatePick from './DatePick'
 import WodEntry from './WodEntry'
+import WodEntryAdd from './WodEntryAdd'
 
 const data = [
   {
@@ -14,7 +15,7 @@ const data = [
   },
 ]
 
-const Wods = () => {
+const WodAddWarmUp = () => {
   const [wod, setWod] = useState({
     userid: '',
     username: 'luigi',
@@ -32,10 +33,10 @@ const Wods = () => {
   return (
     <div className='mb-24 pt-16'>
       <DatePick wod={wod} setWod={setWod} />
-      <WodEntry title='warm up' description={data[0].warmup} />
+      <WodEntryAdd title='warm up' />
       <WodEntry title='workout' description={data[0].workout} />
     </div>
   )
 }
 
-export default Wods
+export default WodAddWarmUp
