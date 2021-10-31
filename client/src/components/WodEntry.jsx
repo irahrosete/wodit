@@ -13,16 +13,16 @@ const WodEntry = ({ title, description }) => {
       <div className='boxWod bg-wodGray'>
         <div className='flex justify-end mx-1'>
           {!description && (
-            <img src={plus} alt='plus' width='15' className='my-2 mx-1' />
+            <img src={plus} alt='plus' width='15' className='mx-1' />
           )}
           {description && (
             <>
-              <img src={edit} alt='plus' width='18' className='my-2 mx-1' />
-              <img src={trash} alt='plus' width='15' className='my-2 mx-1' />
+              <img src={edit} alt='plus' width='18' className='mx-1' />
+              <img src={trash} alt='plus' width='15' className='mx-1' />
             </>
           )}
         </div>
-        <p className='p-2 textWod'>{description}</p>
+        <p className='px-5 py-2 textWod'>{description}</p>
       </div>
     </>
   )
