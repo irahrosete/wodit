@@ -17,7 +17,6 @@ const WodEntryAdd = ({ title, description }) => {
         <form className='mx-3' onSubmit={handleSubmit}>
           <textarea
             className='textWod w-full resize-y rounded border border-wodDarkGray'
-            placeholder='start here...'
             required
             onChange={handleChange}
           />

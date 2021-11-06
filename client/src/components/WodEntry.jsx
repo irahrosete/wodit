@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa'
+import { FaCheckSquare, FaRegWindowClose } from 'react-icons/fa'
 
 import Alert from './Alert'
 
 import plus from '../img/plus.svg'
 import edit from '../img/edit.svg'
 import trash from '../img/trash.svg'
+import warning from '../img/warning'
 
 const WodEntry = ({ title, description }) => {
   const [addAlert, setAddAlert] = useState(false)
@@ -21,16 +22,15 @@ const WodEntry = ({ title, description }) => {
     <>
       {addAlert && (
         <Alert
+          icon={warning}
           message='Are you sure you want to delete?'
           yes={
-            <FaCheckCircle
+            <FaCheckSquare
               className='ml-5 text-wodGreen'
               onClick={handleDelete}
             />
           }
-          no={
-            <FaTimesCircle className='ml-2 text-wodRed' onClick={handleAlert} />
-          }
+          no={<FaRegWindowClose className='ml-2 ' onClick={handleAlert} />}
         />
       )}
       <div className='flex justify-center mt-6'>
