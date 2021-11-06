@@ -49,7 +49,7 @@ const Girls = () => {
         </span>
       </div>
       {isInfoOpen && (
-        <div className='border border-wodDarkGray rounded mx-3 mb-4'>
+        <div className='border border-wodDarkGray rounded mx-3 mb-4 max-w-xs'>
           <h3 className=' textWod tracking-wide text-sm pt-4 px-4'>
             The GIRL WoDs are benchmark workouts in CrossFit. They are designed
             to take a snapshot of your current fitness level. Each Girl WoD
