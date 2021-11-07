@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser'
 
 import MONGODB_URL from './config.js'
 import exercisesRouter from './routes/exercises.js'
+import wodsRouter from './routes/wods.js'
 import usersRouter from './routes/users.js'
 import girlsRouter from './routes/girls.js'
 import heroesRouter from './routes/heroes.js'
@@ -55,6 +56,7 @@ app.get('/', (req, res) => {
 
 // routes
 app.use('/api/exercises', exercisesRouter)
+app.use('/api/wods', wodsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/girls', girlsRouter)
 app.use('/api/heroes', heroesRouter)
