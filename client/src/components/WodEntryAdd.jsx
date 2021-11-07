@@ -13,11 +13,12 @@ const WodEntryAdd = ({ title, wod, setWod }) => {
 
   const handleAdd = (e) => {
     e.preventDefault()
+    console.log('wodentryadd', wod)
     axios
       .post(`${ENV_URL}/api/wods/add`, { ...wod, warmup: wodEntry })
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err))
-    // window.location.assign('/wod')
+    window.location.assign('/wod')
   }
 
   return (

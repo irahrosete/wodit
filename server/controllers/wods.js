@@ -34,7 +34,8 @@ const add = (req, res) => {
   const username = req.body.username
   const warmup = req.body.warmup
   const workout = req.body.workout
-  const date = req.body.date.toString().substring(0, 10)
+  const date = req.body.date
+  // .toString().substring(0, 10)
 
   const newWod = new Wod({ userid, username, warmup, workout, date })
 

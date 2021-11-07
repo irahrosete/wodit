@@ -27,8 +27,6 @@ const WodAddWorkOut = () => {
     // new Date().getDate()
   })
 
-  console.log(wod)
-
   return (
     <div className='mb-24 pt-16'>
       <DatePick wod={wod} setWod={setWod} />

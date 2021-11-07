@@ -15,7 +15,7 @@ const WodAddWarmUp = () => {
     username: '',
     warmup: '',
     workout: '',
-    date: wdate.toISOString().substring(0, 10),
+    date: wdate,
     // new Date().getFullYear(),
     // new Date().getMonth(),
     // new Date().getDate()
