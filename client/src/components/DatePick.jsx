@@ -2,7 +2,7 @@ import React, { useState, forwardRef } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
-const DatePick = ({ exercise, setExercise, wod, setWod }) => {
+const DatePick = ({ exercise, setExercise, wod, setWod, wdate, setWdate }) => {
   const [date, setDate] = useState(
     new Date()
     // new Date().getFullYear(),
@@ -24,7 +24,8 @@ const DatePick = ({ exercise, setExercise, wod, setWod }) => {
     // date.getDate()
     setDate(noTimeDate)
     exercise && setExercise({ ...exercise, date: noTimeDate })
-    wod && setWod({ ...wod, date: noTimeDate })
+    // wod && setWod({ ...wod, date: noTimeDate })
+    wdate && setWdate(noTimeDate)
   }
 
   return (
