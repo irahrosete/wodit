@@ -21,8 +21,7 @@ const WodAddWarmUp = () => {
     warmup: '',
     workout:
       'workout here lorem ipsum\r\nworkout here lorem ipsum\r\nworkout here lorem ipsum',
-    date: new Date(),
-    // .toISOString().substring(0, 10),
+    date: new Date().toISOString().substring(0, 10),
     // new Date().getFullYear(),
     // new Date().getMonth(),
     // new Date().getDate()
