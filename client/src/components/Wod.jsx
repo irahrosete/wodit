@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import DatePick from './DatePick'
 import WodEntry from './WodEntry'
@@ -16,7 +16,7 @@ const data = [
 const Wod = () => {
   const [wod, setWod] = useState({
     userid: '',
-    username: 'luigi',
+    username: '',
     warmup: '',
     workout:
       'workout here lorem ipsum\r\nworkout here lorem ipsum\r\nworkout here lorem ipsum',
@@ -27,6 +27,17 @@ const Wod = () => {
   })
 
   console.log(wod)
+
+  useEffect(() => {
+    localStorage.getItem('username')
+      ? setWod({
+          ...wod,
+          userid: localStorage.getItem('userid'),
+          username: localStorage.getItem('username'),
+        })
+      : setWod({ ...wod })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className='mb-24 pt-16'>
