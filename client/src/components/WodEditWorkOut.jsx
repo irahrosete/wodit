@@ -1,39 +1,54 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 import DatePick from './DatePick'
 import WodEntry from './WodEntry'
-import WodEntryEdit from './WodEntryEdit'
+import WodEdit from './WodEdit'
 
-const data = [
-  {
-    userid: '',
-    username: 'luigi',
-    warmup: '',
-    workout: 'workout here',
-    date: '',
-  },
-]
+import ENV_URL from '../config'
 
 const WodEditWorkOut = () => {
+  const [wdate, setWdate] = useState(new Date())
+
   const [wod, setWod] = useState({
     userid: '',
-    username: 'luigi',
+    username: '',
     warmup: '',
-    workout:
-      'workout here lorem ipsum\r\nworkout here lorem ipsum\r\nworkout here lorem ipsum',
-    date: new Date(),
+    workout: '',
+    date: wdate,
     // new Date().getFullYear(),
     // new Date().getMonth(),
     // new Date().getDate()
   })
 
-  console.log(wod)
+  const user = {
+    userid: localStorage.getItem('userid') || '',
+    username: localStorage.getItem('username') || '',
+  }
+
+  useEffect(() => {
+    axios
+      .get(
+        `${ENV_URL}/api/wods/query?date=${wdate
+          .toISOString()
+          .substring(0, 10)}&userid=${user.userid}&username=${user.username}`
+      )
+      .then((res) => {
+        setWod(res.data[0])
+      })
+      .catch((err) => console.log(err))
+  }, [wdate, user.userid, user.username])
 
   return (
     <div className='mb-24 pt-16'>
-      <DatePick wod={wod} setWod={setWod} />
-      <WodEntry title='warm up' description={data[0].warmup} />
-      <WodEntryEdit title='workout' />
+      <DatePick wod={wod} setWod={setWod} wdate={wdate} setWdate={setWdate} />
+      <WodEntry title='warmup' description={wod ? wod.warmup : ''} />
+      <WodEdit
+        title='workout'
+        wod={wod}
+        setWod={setWod}
+        wodValue={wod ? wod.workout : ''}
+      />
     </div>
   )
 }

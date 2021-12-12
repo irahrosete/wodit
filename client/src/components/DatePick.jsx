@@ -27,7 +27,7 @@ const DatePick = ({ exercise, setExercise, wdate, setWdate }) => {
     wdate && setWdate(noTimeDate)
   }
 
-  console.log('datepicker', wdate)
+  // console.log('datepicker', wdate)
 
   return (
     <div className='flex justify-center pt-6 px-16 md:px-80 lg:px-96 z-0'>
