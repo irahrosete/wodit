@@ -39,7 +39,7 @@ const WodEntry = ({ title, description }) => {
       <div className='boxWod bg-wodGray'>
         <div className='flex justify-end mx-1'>
           {!description && (
-            <Link to={title === 'warm up' ? '/addwarmup' : '/addworkout'}>
+            <Link to={title === 'warm up' ? '/editwarmup' : '/editworkout'}>
               <img src={plus} alt='plus' width='15' className='mx-1' />
             </Link>
           )}

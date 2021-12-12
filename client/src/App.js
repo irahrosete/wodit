@@ -8,8 +8,8 @@ import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
 import Error from './pages/Error'
 import Wod from './components/Wod'
-import WodAddWarmUp from './components/WodAddWarmUp'
-import WodAddWorkOut from './components/WodAddWorkOut'
+// import WodAddWarmUp from './components/WodAddWarmUp'
+// import WodAddWorkOut from './components/WodAddWorkOut'
 import WodEditWarmUp from './components/WodEditWarmUp'
 import WodEditWorkOut from './components/WodEditWorkOut'
 import Exercises from './components/Exercises'
@@ -38,12 +38,12 @@ const App = () => {
           <Route path='/wod'>
             <Wod />
           </Route>
-          <Route path='/addwarmup'>
+          {/* <Route path='/addwarmup'>
             <WodAddWarmUp />
           </Route>
           <Route path='/addworkout'>
             <WodAddWorkOut />
-          </Route>
+          </Route> */}
           <Route path='/editwarmup'>
             <WodEditWarmUp />
           </Route>

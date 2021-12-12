@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import ENV_URL from '../config'
 
-const WodEntryAdd = ({ title, wod, setWod }) => {
+const WodEdit = ({ title, wod, setWod }) => {
   const [wodEntry, setWodEntry] = useState('')
 
   const handleChange = (e) => {
@@ -47,4 +47,4 @@ const WodEntryAdd = ({ title, wod, setWod }) => {
   )
 }
 
-export default WodEntryAdd
+export default WodEdit
