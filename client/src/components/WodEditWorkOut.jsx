@@ -47,7 +47,7 @@ const WodEditWorkOut = () => {
         title='workout'
         wod={wod}
         setWod={setWod}
-        wodValue={wod.workout}
+        wodValue={wod ? wod.workout : ''}
       />
     </div>
   )
