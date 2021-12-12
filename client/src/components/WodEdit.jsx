@@ -46,6 +46,27 @@ const WodEdit = ({ title, wod, setWod, wodValue }) => {
     //   .catch((err) => console.log(err))
 
     // =====
+    // e.preventDefault()
+    // console.log('wodedit', wod)
+
+    // if (wod) {
+    //   const existingWod = wod
+    //   axios
+    //     .post(`${ENV_URL}/api/wods/update/${existingWod._id}`, {
+    //       ...existingWod,
+    //       warmup: wodEntry,
+    //     })
+    //     .then((res) => console.log(res.data))
+    //     .catch((err) => console.log(err))
+    //   window.location.assign('/wod')
+    // } else {
+    //   axios
+    //     .post(`${ENV_URL}/api/wods/add`, { ...wod, warmup: wodEntry })
+    //     .then((res) => console.log(res.data))
+    //     .catch((err) => console.log(err))
+    //   window.location.assign('/wod')
+    // }
+    // =====
     e.preventDefault()
     console.log('wodedit', wod)
     axios
@@ -53,7 +74,6 @@ const WodEdit = ({ title, wod, setWod, wodValue }) => {
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err))
     // window.location.assign('/wod')
-    // =====
   }
 
   return (
