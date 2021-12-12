@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import ENV_URL from '../config'
 
-const WodEdit = ({ title, wod, setWod }) => {
+const WodEdit = ({ title, wod, setWod, wodValue }) => {
   const [wodEntry, setWodEntry] = useState('')
 
   const handleChange = (e) => {
@@ -13,7 +13,7 @@ const WodEdit = ({ title, wod, setWod }) => {
 
   const handleAdd = (e) => {
     e.preventDefault()
-    console.log('wodentryadd', wod)
+    console.log('wodedit', wod)
     axios
       .post(`${ENV_URL}/api/wods/add`, { ...wod, warmup: wodEntry })
       .then((res) => console.log(res.data))
@@ -29,16 +29,18 @@ const WodEdit = ({ title, wod, setWod }) => {
       <div className='boxWod bg-wodGray'>
         <form className='mx-3'>
           <textarea
-            className='textWod w-full resize-y rounded border border-wodDarkGray'
+            className='textWod w-full resize-y rounded border border-wodDarkGray text-edit active-box'
             required
             onChange={handleChange}
+            value={wodValue}
+            // placeholder='hello'
           />
           <div className='flex justify-evenly'>
             <Link to='/wod'>
               <button className='btn bg-wodGray my-2'>cancel</button>
             </Link>
             <button className='btn bg-wodYellow my-2' onClick={handleAdd}>
-              add
+              save
             </button>
           </div>
         </form>
