@@ -49,7 +49,7 @@ const WodEditWarmUp = () => {
 
   return (
     <div className='mb-24 pt-16'>
-      <DatePick wod={wod} setWod={setWod} wdate={wdate} setWdate={setWdate} />
+      <DatePick wod={wod} wdate={wdate} setWdate={setWdate} />
       <WodEdit
         title='warm up'
         wod={wod}

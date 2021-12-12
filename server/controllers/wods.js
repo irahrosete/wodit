@@ -51,11 +51,11 @@ const add = (req, res) => {
 const update = (req, res) => {
   Wod.findById(req.params.id)
     .then((wod) => {
-      exercise.userid = req.body.userid
-      exercise.username = req.body.username
-      exercise.warmup = req.body.warmup
-      exercise.workout = req.body.workout
-      exercise.date = req.body.date.toString().substring(0, 10)
+      wod.userid = req.body.userid
+      wod.username = req.body.username
+      wod.warmup = req.body.warmup
+      wod.workout = req.body.workout
+      wod.date = req.body.date.toString().substring(0, 10)
 
       wod
         .save()
