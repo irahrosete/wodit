@@ -55,8 +55,7 @@ const WodEditWarmUp = () => {
         wod={wod}
         setWod={setWod}
         wodValue={wod ? wod.warmup : ''}
-        wodSection={wod.warmup}
-        section='warmup'
+        wodSection='warmup'
       />
       <WodEntry title='workout' description={wod ? wod.workout : ''} />
     </div>
