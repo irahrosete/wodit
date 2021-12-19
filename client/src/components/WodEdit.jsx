@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import ENV_URL from '../config'
 
-const WodEdit = ({ title, wod, wodValue }) => {
+const WodEdit = ({ title, wod, wodValue, wodSection, section }) => {
   const [wodEntry, setWodEntry] = useState('')
 
   const handleChange = (e) => {
@@ -13,9 +13,9 @@ const WodEdit = ({ title, wod, wodValue }) => {
 
   const handleAdd = (e) => {
     e.preventDefault()
-    if (wod.warmup === '') {
+    if (wodSection === '') {
       axios
-        .post(`${ENV_URL}/api/wods/add`, { ...wod, warmup: wodEntry })
+        .post(`${ENV_URL}/api/wods/add`, { ...wod, [section]: wodEntry })
         .then((res) => console.log(res.data))
         .catch((err) => console.log(err))
       // window.location.assign('/wod')
@@ -23,7 +23,7 @@ const WodEdit = ({ title, wod, wodValue }) => {
       axios
         .post(`${ENV_URL}/api/wods/update/${wod._id}`, {
           ...wod,
-          warmup: wodEntry,
+          [section]: wodEntry,
         })
         .then((res) => console.log(res.data))
         .catch((err) => console.log(err))
