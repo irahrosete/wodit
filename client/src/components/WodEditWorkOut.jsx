@@ -34,7 +34,15 @@ const WodEditWorkOut = () => {
           .substring(0, 10)}&userid=${user.userid}&username=${user.username}`
       )
       .then((res) => {
-        setWod(res.data[0])
+        res.data[0]
+          ? setWod(res.data[0])
+          : setWod({
+              userid: user.userid,
+              username: user.username,
+              warmup: '',
+              workout: '',
+              date: wdate.toISOString().substring(0, 10),
+            })
       })
       .catch((err) => console.log(err))
   }, [wdate, user.userid, user.username])
@@ -48,6 +56,8 @@ const WodEditWorkOut = () => {
         wod={wod}
         setWod={setWod}
         wodValue={wod ? wod.workout : ''}
+        wodSection={wod.workout}
+        section='workout'
       />
     </div>
   )
