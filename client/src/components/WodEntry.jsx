@@ -58,7 +58,7 @@ const WodEntry = ({ title, description }) => {
             </>
           )}
         </div>
-        <p className='px-5 py-2 textWod'>{description}</p>
+        <p className='px-5 py-2 textWod display-linebreak'>{description}</p>
       </div>
     </>
   )

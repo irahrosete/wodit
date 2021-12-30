@@ -52,3 +52,7 @@
 .textWodAlert {
   @apply font-body text-wodRed tracking-wide;
 }
+
+.display-linebreak {
+  white-space: pre-wrap;
+}
