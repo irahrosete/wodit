@@ -13,21 +13,25 @@ const WodEdit = ({ title, wod, wodValue, wodSection }) => {
 
   const handleAdd = (e) => {
     e.preventDefault()
-    if (wod.warmup === '' && wod.workout === '') {
+    if (wod.warmup === '' && wod.workout === '' && !wod._id) {
       axios
         .post(`${ENV_URL}/api/wods/add`, { ...wod, [wodSection]: wodEntry })
-        .then((res) => console.log(res.data))
+        .then((res) => {
+          window.location.assign('/wod')
+          console.log(res.data)
+        })
         .catch((err) => console.log(err))
-      // window.location.assign('/wod')
     } else {
       axios
         .post(`${ENV_URL}/api/wods/update/${wod._id}`, {
           ...wod,
           [wodSection]: wodEntry,
         })
-        .then((res) => console.log(res.data))
+        .then((res) => {
+          window.location.assign('/wod')
+          console.log(res.data)
+        })
         .catch((err) => console.log(err))
-      // window.location.assign('/wod')
     }
   }
 
