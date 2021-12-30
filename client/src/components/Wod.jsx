@@ -38,8 +38,6 @@ const Wod = () => {
       .catch((err) => console.log(err))
   }, [wdate, user.userid, user.username])
 
-  // console.log(wdate)
-
   return (
     <div className='mb-24 pt-16'>
       <DatePick wod={wod} setWod={setWod} wdate={wdate} setWdate={setWdate} />

@@ -17,7 +17,8 @@ I have added a few more features that I think is beneficial for anyone wanting t
 
 - **Push Ups Tracker**. Save, add, remove and track the number of push ups you made each day.
 - **WOD (Workout of the Day)**. Follow a structured workout each day. Add your own or keep the one recommended by me.
-- **'The Girls'**. Check and test yourself against these benchmark CrossFit workouts.
+- **'The Girls'**. Check and test yourself against these physically demanding benchmark CrossFit workouts named after fierce women.
+- **'The Heroes'**. Check and test yourself against these intense and brutal benchmark CrossFit workouts honouring the brave.
 - **User Authentication**. Sign up, Log in, Sign out to use the application.
 - **Admin Dashboard**.
 
