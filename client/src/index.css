@@ -33,6 +33,11 @@
   width: 350px;
 }
 
+.boxText {
+  @apply mx-2;
+  width: 350px;
+}
+
 .boxAlert {
   @apply flex p-1 my-5 mx-auto max-w-xs justify-center bg-wodIvory border rounded border-wodDarkGray absolute inset-x-0 z-10;
 }
