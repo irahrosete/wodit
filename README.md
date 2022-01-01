@@ -74,6 +74,18 @@ This app is for anyone who wishes to form a new habit, follow a workout, and kee
 
 ## 🧪 Testing
 
+WIP
+
 ## 🚀 Deployment
 
+Heroku
+Netlify
+
 ## 💾 Local Setup
+
+1. Fork this repository.
+1. Clone the forked repository into your local directory.
+1. Make sure node and yarn are installed.
+1. From the root folder, `cd server`. Then run `npm install`.
+1. Go back to root folder, `cd ..`
+1. From the root folder, `cd client`. Then run `yarn install`.
