@@ -41,7 +41,6 @@ const WodEdit = ({ title, wod, wodValue, wodSection }) => {
         <h3 className='textWod uppercase text-2xl mb-3'>{title}</h3>
       </div>
       <div className='boxWod bg-wodGray px-3'>
-        {/* <form className='mx-3 h-full'> */}
         <textarea
           className='textWod w-full resize-y rounded border border-wodDarkGray active-box'
           required
@@ -57,7 +56,6 @@ const WodEdit = ({ title, wod, wodValue, wodSection }) => {
             save
           </button>
         </div>
-        {/* </form> */}
       </div>
     </>
   )

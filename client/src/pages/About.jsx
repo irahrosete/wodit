@@ -44,9 +44,8 @@ const About = () => {
               </li>
             </ul>
             <p className='my-2'>
-              More than anything, this app is a habit builder and tracker. If
-              you can visualise it and keep a record of it, it is more likely
-              that you stick to it!
+              This app is a habit builder and tracker. If you can visualise it
+              and keep a record of it, it is more likely you'll stick to it!
             </p>
           </div>
 
@@ -54,7 +53,7 @@ const About = () => {
             <p className='text-center mt-6 text-sm'>Hi!👋🏼 My name is Irah.</p>
             <p className='mb-4 text-sm'>
               In June 2021, I participated in The Push Up Challenge with the
-              rest of Australia and did 3,318 push ups in 25 days. The habit
+              rest of Australia, and did 3,318 push ups in 25 days. This habit
               stuck with me, and I am still doing daily push ups to this day.
             </p>
           </div>
