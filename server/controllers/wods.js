@@ -1,4 +1,5 @@
 import Wod from '../models/wod.js'
+import { formatDate } from '../utils/format-date.js'
 
 // get all wods
 const getAll = (req, res) => {
@@ -34,8 +35,7 @@ const add = (req, res) => {
   const username = req.body.username
   const warmup = req.body.warmup
   const workout = req.body.workout
-  const date = req.body.date
-  // .toString().substring(0, 10)
+  const date = formatDate(req.body.date)
 
   const newWod = new Wod({ userid, username, warmup, workout, date })
 
@@ -55,7 +55,7 @@ const update = (req, res) => {
       wod.username = req.body.username
       wod.warmup = req.body.warmup
       wod.workout = req.body.workout
-      wod.date = req.body.date.toString().substring(0, 10)
+      wod.date = formatDate(req.body.date)
 
       wod
         .save()

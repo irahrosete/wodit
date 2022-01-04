@@ -80,6 +80,7 @@ WIP
 
 Heroku
 Netlify
+`yarn build`
 
 ## 💾 Local Setup
 

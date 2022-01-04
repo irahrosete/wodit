@@ -6,6 +6,7 @@ import WodEntry from './WodEntry'
 import WodEdit from './WodEdit'
 
 import ENV_URL from '../config'
+import { formatDate } from '../utils/format-date'
 
 const WodEditWorkOut = () => {
   const [wdate, setWdate] = useState(new Date())
@@ -16,9 +17,6 @@ const WodEditWorkOut = () => {
     warmup: '',
     workout: '',
     date: wdate,
-    // new Date().getFullYear(),
-    // new Date().getMonth(),
-    // new Date().getDate()
   })
 
   const user = {
@@ -29,9 +27,9 @@ const WodEditWorkOut = () => {
   useEffect(() => {
     axios
       .get(
-        `${ENV_URL}/api/wods/query?date=${wdate
-          .toISOString()
-          .substring(0, 10)}&userid=${user.userid}&username=${user.username}`
+        `${ENV_URL}/api/wods/query?date=${formatDate(wdate)}&userid=${
+          user.userid
+        }&username=${user.username}`
       )
       .then((res) => {
         res.data[0]
@@ -41,7 +39,7 @@ const WodEditWorkOut = () => {
               username: user.username,
               warmup: '',
               workout: '',
-              date: wdate.toISOString().substring(0, 10),
+              date: wdate,
             })
       })
       .catch((err) => console.log(err))
