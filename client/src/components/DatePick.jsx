@@ -3,12 +3,8 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
 const DatePick = ({ exercise, setExercise, wdate, setWdate }) => {
-  const [date, setDate] = useState(
-    new Date()
-    // new Date().getFullYear(),
-    // new Date().getMonth(),
-    // new Date().getDate()
-  )
+  const [date, setDate] = useState(new Date())
+
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
     <div className='flex justify-center'>
       <button className='btndate' onClick={onClick} ref={ref}>
@@ -19,12 +15,10 @@ const DatePick = ({ exercise, setExercise, wdate, setWdate }) => {
 
   const handleDateChange = (date) => {
     const noTimeDate = new Date(date)
-    // date.getFullYear(),
-    // date.getMonth(),
-    // date.getDate()
     setDate(noTimeDate)
     exercise && setExercise({ ...exercise, date: noTimeDate })
     wdate && setWdate(noTimeDate)
+    // console.log(noTimeDate)
   }
 
   // console.log('datepicker', wdate)

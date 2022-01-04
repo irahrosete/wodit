@@ -1,6 +1,6 @@
 import Exercise from '../models/exercise.js'
 
-import { formatDate } from '../utils/formatDate.js'
+import { formatDate } from '../utils/format-date.js'
 
 // get all exercises
 const getAll = (req, res) => {
@@ -16,7 +16,9 @@ const getByDateAndUser = (req, res) => {
     username: req.query.username,
     userid: req.query.userid,
   })
-    .then((exercises) => res.json(exercises))
+    .then((exercises) => {
+      res.json(exercises)
+    })
     .catch((err) => res.status(400).json('Error ' + err))
 }
 
