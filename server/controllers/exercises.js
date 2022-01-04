@@ -1,5 +1,7 @@
 import Exercise from '../models/exercise.js'
 
+import { formatDate } from '../utils/formatDate.js'
+
 // get all exercises
 const getAll = (req, res) => {
   Exercise.find()
@@ -34,8 +36,7 @@ const add = (req, res) => {
   const username = req.body.username
   const activity = req.body.activity
   const rep = Number(req.body.rep)
-  const date = req.body.date.toString().substring(0, 10)
-
+  const date = formatDate(req.body.date)
   const newExercise = new Exercise({ userid, username, activity, rep, date })
 
   newExercise
@@ -54,7 +55,7 @@ const update = (req, res) => {
       exercise.username = req.body.username
       exercise.activity = req.body.activity
       exercise.rep = Number(req.body.rep)
-      exercise.date = req.body.date.toString().substring(0, 10)
+      exercise.date = formatDate(req.body.date)
 
       exercise
         .save()
