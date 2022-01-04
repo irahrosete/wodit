@@ -15,7 +15,8 @@ const Wod = () => {
     username: '',
     warmup: '',
     workout: '',
-    date: wdate,
+    // date: wdate,
+    date: new Date(),
   })
 
   const user = {
