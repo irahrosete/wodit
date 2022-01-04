@@ -48,7 +48,7 @@ const WodEditWorkOut = () => {
   return (
     <div className='mb-24 pt-16'>
       <DatePick wod={wod} wdate={wdate} setWdate={setWdate} />
-      <WodEntry title='warmup' description={wod ? wod.warmup : ''} />
+      <WodEntry title='warm up' description={wod ? wod.warmup : ''} />
       <WodEdit
         title='workout'
         wod={wod}

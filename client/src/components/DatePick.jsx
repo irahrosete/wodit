@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
 const DatePick = ({ exercise, setExercise, wdate, setWdate }) => {
+  // const [date, setDate] = useState(wdate ? wdate : new Date())
   const [date, setDate] = useState(new Date())
 
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
@@ -18,10 +19,7 @@ const DatePick = ({ exercise, setExercise, wdate, setWdate }) => {
     setDate(noTimeDate)
     exercise && setExercise({ ...exercise, date: noTimeDate })
     wdate && setWdate(noTimeDate)
-    // console.log(noTimeDate)
   }
-
-  // console.log('datepicker', wdate)
 
   return (
     <div className='flex justify-center pt-6 px-16 md:px-80 lg:px-96 z-0'>

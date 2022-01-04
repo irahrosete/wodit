@@ -31,8 +31,8 @@ const Exercises = ({ component: Component, ...rest }) => {
       </div>
       {exercises.map((exercise) => {
         return (
-          <div className='px-32 mb-4' key={exercise._id}>
-            <p className='text-center textWod bg-wodGray border rounded border-wodDarkGray p-1'>
+          <div className='mb-5' key={exercise._id}>
+            <p className='text-center textWod bg-wodGray boxLog p-1'>
               {exercise.date}
             </p>
             <p className='text-center textWod text-2xl'>{exercise.rep}</p>
