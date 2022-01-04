@@ -108,6 +108,9 @@ const EditExercise = () => {
       .catch((err) => console.log(err))
   }
 
+  console.log(exercise.date)
+  console.log(formatDate(exercise.date))
+
   return (
     <div className='mb-24 pt-16'>
       <DatePick exercise={exercise} setExercise={setExercise} />
