@@ -5,6 +5,7 @@ import DatePick from './DatePick'
 import WodEntry from './WodEntry'
 
 import ENV_URL from '../config'
+import { formatDate } from '../utils/format-date'
 
 const Wod = () => {
   const [wdate, setWdate] = useState(new Date())
@@ -15,9 +16,6 @@ const Wod = () => {
     warmup: '',
     workout: '',
     date: wdate,
-    // new Date().getFullYear(),
-    // new Date().getMonth(),
-    // new Date().getDate()
   })
 
   const user = {
@@ -28,9 +26,9 @@ const Wod = () => {
   useEffect(() => {
     axios
       .get(
-        `${ENV_URL}/api/wods/query?date=${wdate
-          .toISOString()
-          .substring(0, 10)}&userid=${user.userid}&username=${user.username}`
+        `${ENV_URL}/api/wods/query?date=${formatDate(wdate)}&userid=${
+          user.userid
+        }&username=${user.username}`
       )
       .then((res) => {
         setWod(res.data[0])
