@@ -57,7 +57,7 @@ const update = (req, res) => {
       exercise.username = req.body.username
       exercise.activity = req.body.activity
       exercise.rep = Number(req.body.rep)
-      exercise.date = formatDate(req.body.date)
+      exercise.date = req.body.date
 
       exercise
         .save()

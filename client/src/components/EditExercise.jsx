@@ -53,6 +53,13 @@ const EditExercise = () => {
         )}&userid=${exercise.userid}&username=${exercise.username}`
       )
       .then((res) => {
+        console.log('date', exercise.date, formatDate(exercise.date))
+        // const t = exercise.date
+        // const z = t.getTimezoneOffset() * 60 * 1000
+        // const tLocal = new Date(t - z)
+        // const iso = tLocal.toISOString().substring(0, 10)
+        // console.log(iso)
+
         const existingExercise = res.data[0]
 
         if (existingExercise) {
@@ -62,12 +69,18 @@ const EditExercise = () => {
               ...existingExercise,
               rep: newRep,
             })
-            .then((res) => console.log(res.data))
+            .then((res) => {
+              console.log(res.data)
+              console.log('existingExercise', existingExercise)
+            })
             .catch((err) => console.log(err))
         } else {
           axios
             .post(`${ENV_URL}/api/exercises/add`, { ...exercise, rep })
-            .then((res) => console.log(res.data))
+            .then((res) => {
+              console.log('exercise', exercise)
+              console.log(res.data)
+            })
             .catch((err) => console.log(err))
         }
       })
@@ -107,9 +120,6 @@ const EditExercise = () => {
       })
       .catch((err) => console.log(err))
   }
-
-  console.log(exercise.date)
-  console.log(formatDate(exercise.date))
 
   return (
     <div className='mb-24 pt-16'>
