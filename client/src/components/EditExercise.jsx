@@ -53,13 +53,6 @@ const EditExercise = () => {
         )}&userid=${exercise.userid}&username=${exercise.username}`
       )
       .then((res) => {
-        console.log('date', exercise.date, formatDate(exercise.date))
-        // const t = exercise.date
-        // const z = t.getTimezoneOffset() * 60 * 1000
-        // const tLocal = new Date(t - z)
-        // const iso = tLocal.toISOString().substring(0, 10)
-        // console.log(iso)
-
         const existingExercise = res.data[0]
 
         if (existingExercise) {
