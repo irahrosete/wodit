@@ -9,7 +9,6 @@ import Alert from './Alert'
 import thumbup from '../img/thumb-up'
 import thumbdown from '../img/thumb-down'
 import ENV_URL from '../config'
-import { formatDate } from '../utils/format-date'
 
 const EditExercise = () => {
   const [exercise, setExercise] = useState({
@@ -17,7 +16,7 @@ const EditExercise = () => {
     username: '',
     activity: 'push ups',
     rep: 0,
-    date: new Date(),
+    date: new Date().toISOString().substring(0, 10),
   })
 
   useEffect(() => {
@@ -48,9 +47,7 @@ const EditExercise = () => {
 
     axios
       .get(
-        `${ENV_URL}/api/exercises/query?date=${formatDate(
-          exercise.date
-        )}&userid=${exercise.userid}&username=${exercise.username}`
+        `${ENV_URL}/api/exercises/query?date=${exercise.date}&userid=${exercise.userid}&username=${exercise.username}`
       )
       .then((res) => {
         const existingExercise = res.data[0]
@@ -64,14 +61,14 @@ const EditExercise = () => {
             })
             .then((res) => {
               console.log(res.data)
-              console.log('existingExercise', existingExercise)
+              // console.log('existingExercise', existingExercise)
             })
             .catch((err) => console.log(err))
         } else {
           axios
             .post(`${ENV_URL}/api/exercises/add`, { ...exercise, rep })
             .then((res) => {
-              console.log('exercise', exercise)
+              // console.log('exercise', exercise)
               console.log(res.data)
             })
             .catch((err) => console.log(err))
@@ -90,9 +87,7 @@ const EditExercise = () => {
 
     axios
       .get(
-        `${ENV_URL}/api/exercises/query?date=${formatDate(
-          exercise.date
-        )}&userid=${exercise.userid}&username=${exercise.username}`
+        `${ENV_URL}/api/exercises/query?date=${exercise.date}&userid=${exercise.userid}&username=${exercise.username}`
       )
       .then((res) => {
         const existingExercise = res.data[0] || 0
