@@ -38,7 +38,7 @@ const add = (req, res) => {
   const username = req.body.username
   const activity = req.body.activity
   const rep = Number(req.body.rep)
-  const date = formatDate(req.body.date)
+  const date = req.body.date
   const newExercise = new Exercise({ userid, username, activity, rep, date })
 
   newExercise
